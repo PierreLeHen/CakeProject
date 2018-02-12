@@ -18,7 +18,7 @@
         <tr>
 
 
-            <td><input type="password" name="password" placeholder="Confirmer votre mot de passe"/></td>
+            <td><input type="password" name="password" placeholder="Confirmation du mot de passe"/></td>
 
 
         </tr>
