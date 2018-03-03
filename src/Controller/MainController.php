@@ -14,12 +14,12 @@ class MainController extends AppController
 
     }
 
-    public function machin()
+    public function moncompte()
     {
 
         $this->loadModel("Members");
-        $m = $this->Members->find();
-        $this->set("m", $m->toArray());
+        $mail_array = $this->Members->getAllEmail();
+        $this->set("mail_array", $mail_array);
 
     }
     
@@ -42,6 +42,8 @@ public function register(){
         }
     }
 }
+
+
 
 
 }

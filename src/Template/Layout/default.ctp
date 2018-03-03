@@ -25,17 +25,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
-
+  <?= $this->Html->css('bootstrap.min.css');?>
+      <?= $this->Html->script('jquery.js');?>
+     <?=  $this->Html->script('bootstrap.min.js');?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
-          <?= $this->Form->javascript('login.js');?>
+          <?= $this->Html->script('login.js');?>
     <?= $this->Html->css('login.css') ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-     <?= $this->Form->css('bootstrap.min.css');?>
-  <?= $this->Form->javascript('jquery.js');?>
- <?=  $this->Form->javascript('bootstrap.min.js');?>
+
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
