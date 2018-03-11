@@ -22,9 +22,21 @@ class MainController extends AppController
         $this->set("mail_array", $mail_array);
 
     }
-    
-    
-    
+    public function devices()
+    {
+        $this->loadModel("Devices");
+
+        //tableau des objets trusted
+        $devices_trusted_array = $this->Devices->getAllDevicesTrusted();
+        $this->set("devices_trusted_array", $devices_trusted_array);
+
+        //tableau des objets non authorized
+        $devices_not_trusted_array = $this->Devices->getAllDevicesNotTrusted();
+        $this->set("devices_not_trusted_array", $devices_not_trusted_array);
+    }
+
+
+
 public function register(){
     $rajout=3;
     $this->loadModel('Contact');
