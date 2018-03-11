@@ -22,26 +22,26 @@ class MainController extends AppController
         $this->set("mail_array", $mail_array);
 
     }
-    
-    
-    
-public function register(){
-    $rajout=3;
-    $this->loadModel('Contact');
-    if($this->request->is('post'))//si on a envoyé un formulaire
-    {
-        $array= $this->request->getData();
-        $rajout=$this->Players->add($array);
-        $this->set('Contact',$rajout);
-        if( $rajout==1)
+
+
+
+    public function register(){
+        $rajout=3;
+        $this->loadModel('Contact');
+        if($this->request->is('post'))//si on a envoyé un formulaire
         {
-            $this->Flash->success(__("L'utilisateur a été sauvegardé."));
-            $this->redirect(['action' => 'login']);
-        }else if ($rajout==0){
-         $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+            $array= $this->request->getData();
+            $rajout=$this->Players->add($array);
+            $this->set('Contact',$rajout);
+            if( $rajout==1)
+            {
+                $this->Flash->success(__("L'utilisateur a été sauvegardé."));
+                $this->redirect(['action' => 'login']);
+            }else if ($rajout==0){
+                $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+            }
         }
     }
-}
 
 
 
