@@ -23,27 +23,16 @@ class MainController extends AppController
 
     }
 
+    public function devices()
+    {
+        $this->loadModel("Devices");
 
+        //tableau des objets trusted
+        $devices_trusted_array = $this->Devices->getAllDevicesTrusted();
+        $this->set("devices_trusted_array", $devices_trusted_array);
 
-    public function register(){
-        $rajout=3;
-        $this->loadModel('Contact');
-        if($this->request->is('post'))//si on a envoyé un formulaire
-        {
-            $array= $this->request->getData();
-            $rajout=$this->Players->add($array);
-            $this->set('Contact',$rajout);
-            if( $rajout==1)
-            {
-                $this->Flash->success(__("L'utilisateur a été sauvegardé."));
-                $this->redirect(['action' => 'login']);
-            }else if ($rajout==0){
-                $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
-            }
-        }
+        //tableau des objets non authorized
+        $devices_not_trusted_array = $this->Devices->getAllDevicesNotTrusted();
+        $this->set("devices_not_trusted_array", $devices_not_trusted_array);
     }
 
-
-
-
-}
