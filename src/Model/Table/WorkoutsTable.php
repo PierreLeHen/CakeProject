@@ -25,4 +25,16 @@ class WorkoutsTable extends Table {
         $this->save($new);
     }
 
+
+    public function getAllWorkouts()
+    {
+
+        $all_workouts = $this
+            ->find()
+            ->select(['date','end_date','location_name','description','sport']);
+
+        return $all_workouts;
+    }
+
+
 }

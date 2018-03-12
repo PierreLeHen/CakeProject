@@ -109,7 +109,6 @@ class MainController extends AppController
     }
 
 
-
     public function inscriptions()
 
     {
@@ -133,6 +132,11 @@ class MainController extends AppController
 
     public function seances()
     {
+        $this->loadModel("Workouts");
+        $workouts_array = $this->Workouts->getAllWorkouts();
+        $this->set("workouts_array", $workouts_array);
+
+
         //$this->loadModel("Workouts");
         //$description = $this->request->data('description');
         //$sport = $this->request->data('sport');
@@ -141,7 +145,7 @@ class MainController extends AppController
         //$end_date = $this->request->data('end_date');
         //$member_id = $this->Auth->user('id');
 
-        $this->loadModel("Workouts");
+
         $new =$this->Workouts->newEntity();
         if($this->request->is("post"))
         {
@@ -149,7 +153,26 @@ class MainController extends AppController
             $end_date = \Cake\I18n\Time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
             $lieu = $this->request->data("location_name");
             $member_id = $this->Auth->user('id');
-            $sport = $this->request->data('sport');
+
+            if($this->request->data('sport')==0)
+            $sport = "Course";
+
+            if($this->request->data('sport')==1)
+                $sport = "Biceps";
+
+            if($this->request->data('sport')==2)
+                $sport = "Pompes";
+
+            if($this->request->data('sport')==3)
+                $sport = "Abdos";
+
+            if($this->request->data('sport')==4)
+                $sport = "Triceps";
+
+            if($this->request->data('sport')==5)
+                $sport = "Rameur";
+
+
             $description = $this->request->data('description');
 
             $this->Workouts->addWorkouts($date, $end_date,$sport,$description,$lieu,$member_id);
@@ -164,7 +187,16 @@ class MainController extends AppController
 
         //$this->Workouts->save($new);
 
+
+
+
     }
+
+
+
+
+
+
 
     /**
      * Activate method
