@@ -35,6 +35,23 @@ class MainController extends AppController
         $this->set("devices_not_trusted_array", $devices_not_trusted_array);
     }
 
+    public function SupprimerObjet($IDobjet)
+    {
+        $this->loadModel("Devices");
+        $this->Devices->supprimerobjet($IDobjet);
+        return $this->redirect(['controller' => 'Main', 'action' => 'devices']);
+
+
+    }
+
+    public function AutoriserObjet($IDobjet)
+    {
+        $this->loadModel("Devices");
+        $this->Devices->autoriserobjet($IDobjet);
+        return $this->redirect(['controller' => 'Main', 'action' => 'devices']);
+
+    }
+
 
 
 public function register(){

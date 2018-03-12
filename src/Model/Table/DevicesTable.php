@@ -37,5 +37,24 @@ class DevicesTable extends Table
     }
 
 
+    public function supprimerobjet($IDobjet)
+    {
+
+        $entity_device = $this->get($IDobjet);
+        return $this->delete($entity_device);
+
+
+    }
+
+    public function autoriserobjet($IDobjet)
+    {
+        $asking_device = $this->get($IDobjet);
+        $asking_device->trusted = 1;
+        return $this->save($asking_device);
+
+
+    }
+
+
 
 }
