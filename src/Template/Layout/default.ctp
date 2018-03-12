@@ -46,6 +46,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('content') ?>
     </div>
     <footer>
+        <a href="/csport/truc/contact?controler=contact">Contact</a>
+        <a href="/csport/truc/equipe?controler=equipe">Equipe</a>
+        <a href="/csport/truc/mentions?controler=mentions">Mentions légales</a>
+        <a href="/csport/truc/faq?controler=faq">FAQ</a>
     </footer>
     </body>
 </html>

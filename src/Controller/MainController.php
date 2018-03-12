@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -13,15 +14,16 @@ use Cake\Routing\Router;
 
 class MainController extends AppController
 {
-    public function initialize() {
-     parent::initialize(); 
-    // $this->loadComponent('Main');      
+    public function initialize()
+    {
+        parent::initialize();
+        // $this->loadComponent('Main');
     }
-    
-      public function beforeFilter(Event $event)
+
+    public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow('register','inscriptions','activate','mailCheck');
+        $this->Auth->allow('register', 'inscriptions', 'activate', 'mailCheck');
     }
 
     public function index()
@@ -30,7 +32,8 @@ class MainController extends AppController
         $this->loadModel("Members");
         $m = $this->Members->find();
         $this->set("m", $m->toArray());
-    }  
+    }
+
     public function moncompte()
     {
 
@@ -39,8 +42,8 @@ class MainController extends AppController
         $this->set("mail_array", $mail_array);
 
     }
-    
-                                    ///Affichage des Objets Connectes
+
+    ///Affichage des Objets Connectes
     public function devices()
     {
         $this->loadModel("Devices");
@@ -82,6 +85,7 @@ class MainController extends AppController
             $this->Flash->error(__('Mot de passe ou adresse mail incorrecte'));
         }
     }
+
     ///Création d'un nouvel utilisateur
     public function add()
     {
@@ -97,34 +101,76 @@ class MainController extends AppController
         }
         $this->set('user', $user);
     }
+
     ///Deconnexion
     public function logout()
     {
         return $this->redirect($this->Auth->logout());
     }
 
-    public function inscriptions(){
-    $rajout=3;
-    $this->loadModel('Members');
-    if($this->request->is('post'))//si on a envoyé un formulaire
+
+
+    public function inscriptions()
+
     {
-        $array= $this->request->getData();
-        $rajout=$this->Members->add($array);
-        $this->set('members',$rajout);
-        if( $rajout==1)
+        $rajout = 3;
+        $this->loadModel('Members');
+        if ($this->request->is('post'))//si on a envoyé un formulaire
         {
-            $this->Flash->success(__("L'utilisateur a été sauvegardé."));
-            $this->redirect(['action' => 'register']);
-        }else if ($rajout==0){
-         $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+            $array = $this->request->getData();
+            $rajout = $this->Members->add($array);
+            $this->set('members', $rajout);
+            if ($rajout == 1) {
+                $this->Flash->success(__("L'utilisateur a été sauvegardé."));
+                $this->redirect(['action' => 'register']);
+            } else if ($rajout == 0) {
+                $this->Flash->error(__("Impossible d'ajouter l'utilisateur."));
+            }
         }
+
+
     }
-}
-       /**
+
+    public function seances()
+    {
+        //$this->loadModel("Workouts");
+        //$description = $this->request->data('description');
+        //$sport = $this->request->data('sport');
+        //$lieu = $this->request->data('lieu');
+        //$date = $this->request->data('date');
+        //$end_date = $this->request->data('end_date');
+        //$member_id = $this->Auth->user('id');
+
+        $this->loadModel("Workouts");
+        $new =$this->Workouts->newEntity();
+        if($this->request->is("post"))
+        {
+            $date = \Cake\I18n\Time::create($this->request->data['date']['year'], $this->request->data['date']['month'], $this->request->data['date']['day'], $this->request->data['date']['hour'], $this->request->data['date']['minute']);
+            $end_date = \Cake\I18n\Time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
+            $lieu = $this->request->data("location_name");
+            $member_id = $this->Auth->user('id');
+            $sport = $this->request->data('sport');
+            $description = $this->request->data('description');
+
+            $this->Workouts->addWorkouts($date, $end_date,$sport,$description,$lieu,$member_id);
+        }
+        $this->set("new",$new);
+        //$new->member_id = $member_id;
+        //$new->date = $date;
+        //$new->end_date = $end_date;
+        //$new->location_name = $lieu;
+        //$new->description = $description;
+        //$new->sport = $sport;
+
+        //$this->Workouts->save($new);
+
+    }
+
+    /**
      * Activate method
      *
      * @return \Cake\Network\Response|null
-   * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     /*
     public function mailCheck(){
