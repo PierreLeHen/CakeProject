@@ -1,0 +1,84 @@
+@font-face {
+    font-family:"Futura PT";
+    src: url("font/Futura Md BT Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family:"Proxima Nova";
+    src: url("font/proximanova-regular-webfont.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family:"Proxima Nova";
+    src: url("font/proximanova-bold-webfont.ttf");
+    font-weight: 700;
+}
+body{
+background-image:url("../img/bg.jpg");
+background-repeat:no-repeat;
+background-position:top center;
+    background-size: cover;
+    }
+
+h1{
+	font-family: "Futura PT";
+		font-weight: 700;
+		font-size: 35pt;
+		text-transform: uppercase;
+		color:#FFF;
+}
+p{
+		font-family: "Proxima Nova";
+		    font-weight: 300;
+		font-size: 16pt;
+		text-align: left;
+				color:#FFF;
+
+}
+article{
+	margin-top: 20vh;
+
+}
+.myform{
+margin-top: 40px;
+}
+
+.login{
+zoom: 1;
+filter: alpha(opacity=50);
+opacity: 1;
+  border: 0px solid #EEE !important!important;
+  border-bottom: 3px solid #FFF !important;
+  margin-bottom: 15px
+  font-style: normal;
+  text-decoration:none;
+ font-size:1.2em;
+ font-family:"Proxima Nova";
+  font-weight:bold;
+  padding: 10px 0px;
+  color: #FFF;
+  width: 35% !important;
+}
+#submit{
+ margin-bottom: 125px;
+ width: 71%;
+ padding: 10px;
+ font-style: normal;
+ text-decoration:none;
+ font-weight:bold;
+ font-size:1.2em;
+ font-family:"Proxima Nova";
+ color: #FFF;
+ border: 5px solid  #FFF;;
+ background-color: hsla(0,0%,100%,0.00);
+
+ transition: all 0.3s ease-in-out;
+}
+#submit:hover
+{
+  background: #FFF;
+
+  color: #333;
+
+}

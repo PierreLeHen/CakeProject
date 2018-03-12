@@ -42,6 +42,10 @@ class TrucController extends AppController
     {
 
     }
+    public function seances()
+    {
+
+    }
 
 
 
