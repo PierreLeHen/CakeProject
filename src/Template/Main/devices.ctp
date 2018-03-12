@@ -9,13 +9,11 @@
        <th> Gestion </th>
 
    </tr>
-
 <?php foreach ($devices_trusted_array as $row){
 
     echo "<tr><td>".$row['id']."</td><td>".$row['member_id']."</td><td>".$row['serial']."</td><td>".$row['description']."</td><td>".$row['trusted']."</td><td>".$this->Form->postButton("Supprimer", ["controller"=>"Main", "action"=>"SupprimerObjet/".$row->id])."</td></tr>";
 
     }
-
 
 ?>
 </table>
