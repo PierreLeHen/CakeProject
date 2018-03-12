@@ -102,7 +102,7 @@ class MainController extends AppController
     {
         return $this->redirect($this->Auth->logout());
     }
-    
+
     public function inscriptions(){
     $rajout=3;
     $this->loadModel('Members');

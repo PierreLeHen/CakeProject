@@ -48,9 +48,9 @@ margin-top: 40px;
 zoom: 1;
 filter: alpha(opacity=50);
 opacity: 1;
-  border: 0px solid #EEE !important!important;
+  border: 0px solid #EEE !important;!important;
   border-bottom: 3px solid #FFF !important;
-  margin-bottom: 15px
+  margin-bottom: 15px;
   font-style: normal;
   text-decoration:none;
  font-size:1.2em;
