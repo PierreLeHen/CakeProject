@@ -9,8 +9,9 @@
       echo $this->Form->create('Inscription',['label'=>'','div' => false]);
       echo $this->Form->control('email',['class'=>'login','placeholder'=>'login','label'=>'','div' => false]); 
       echo $this->Form->control('password',['class'=>'login','label'=>'','div' => false]); 
-      echo $this->Form->button('> S\'inscrire <',['id'=>'submit']); 
+      echo $this->Form->button('> Se connecter <',['id'=>'submit']); 
       echo $this->Form->end();?>
+         <?= $this->Flash->render() ?>
   </article>	
   
 </body>
