@@ -66,4 +66,21 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+    public function contact()
+    {
+
+    }
+    public function mentions()
+    {
+
+    }
+    public function equipe()
+    {
+
+    }
+    public function faq()
+    {
+
+    }
 }

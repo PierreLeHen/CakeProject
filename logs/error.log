@@ -3126,3 +3126,913 @@ Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 106
 
 
 
+2018-03-12 19:58:16 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-12 19:58:18 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-12 19:58:46 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-12 19:58:51 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-12 19:58:53 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-12 20:01:38 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:27:21 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:27:22 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:27:22 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:27:37 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:28:00 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:28:06 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/moncompte
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:28:06 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/moncompte
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:28:14 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:28:53 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:28:54 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Query.php(214): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1929): Cake\Database\Query->execute()
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1823): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1736): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1459): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Database\Connection.php(682): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1460): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\ORM\Table.php(1737): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\ToolbarService.php(206): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 09:30:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/font/Futura%20Md%20BT%20Bold.ttf
+Referer URL: http://localhost/csport/css/login.css
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(38): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:30:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/font/proximanova-regular-webfont.ttf
+Referer URL: http://localhost/csport/css/login.css
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(38): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:30:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/font/proximanova-bold-webfont.ttf
+Referer URL: http://localhost/csport/css/login.css
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(38): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:33:48 Error: [Cake\View\Exception\MissingTemplateException] Template file "Truc\mentions.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Truc\\mentions.ctp',
+)
+Request URL: /truc/mentions?controler=mentions
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Truc\\mentions')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TrucController))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+
+
+2018-03-13 09:34:31 Error: [Cake\View\Exception\MissingTemplateException] Template file "Truc\equipe.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Truc\\equipe.ctp',
+)
+Request URL: /truc/equipe?controler=equipe
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Truc\\equipe')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TrucController))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+
+
+2018-03-13 09:35:30 Error: [Cake\Controller\Exception\MissingActionException] Action TrucController::equipe() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrucController',
+  'action' => 'equipe',
+  'prefix' => '',
+  'plugin' => false,
+)
+Request URL: /truc/equipe?controler=equipe
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TrucController))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:35:42 Error: [Cake\Controller\Exception\MissingActionException] Action TrucController::equipe() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrucController',
+  'action' => 'equipe',
+  'prefix' => '',
+  'plugin' => false,
+)
+Request URL: /truc/equipe?controler=equipe
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TrucController))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:37:02 Error: [Cake\View\Exception\MissingTemplateException] Template file "Main\equipe.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Main\\equipe.ctp',
+)
+Request URL: /main/equipe?controler=equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Main\\equipe')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MainController))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+
+
+2018-03-13 09:37:17 Error: [Cake\Controller\Exception\MissingActionException] Action TrucController::equipe() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrucController',
+  'action' => 'equipe',
+  'prefix' => '',
+  'plugin' => false,
+)
+Request URL: /truc/equipe?controler=equipe
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TrucController))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:40:15 Error: [Cake\Controller\Exception\MissingActionException] Action TrucController::equipe() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrucController',
+  'action' => 'equipe',
+  'prefix' => '',
+  'plugin' => false,
+)
+Request URL: /truc/equipe?controler=equipe
+Referer URL: http://localhost/csport/main/seances
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\TrucController))
+#2 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#15 {main}
+
+
+2018-03-13 09:46:24 Warning: Warning (2): link() expects exactly 2 parameters, 3 given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 49]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 49
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:46:24 Warning: Warning (2): link() expects exactly 2 parameters, 3 given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 50]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 50
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:46:24 Warning: Warning (2): link() expects exactly 2 parameters, 3 given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 51]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 51
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:46:24 Warning: Warning (2): link() expects exactly 2 parameters, 3 given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 52]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 52
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:47:37 Warning: Warning (2): link() expects parameter 2 to be string, array given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 49]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 49
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:47:37 Warning: Warning (2): link() expects parameter 2 to be string, array given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 50]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 50
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:47:37 Warning: Warning (2): link() expects parameter 2 to be string, array given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 51]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 51
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2018-03-13 09:47:37 Warning: Warning (2): link() expects parameter 2 to be string, array given in [C:\wamp64\www\csport\src\Template\Layout\default.ctp, line 52]
+Request URL: /main/seances
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+link - [internal], line ??
+include - APP/Template\Layout\default.ctp, line 52
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1196
+Cake\View\View::_render() - CORE\src\View\View.php, line 1157
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 812
+Cake\View\View::render() - CORE\src\View\View.php, line 770
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 108
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 104
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 98
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+DebugKit\Middleware\DebugKitMiddleware::__invoke() - ROOT\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php, line 52
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
+[main] - ROOT\webroot\index.php, line 40
+
+
+
