@@ -4036,3 +4036,177 @@ Cake\Http\Server::run() - CORE\src\Http\Server.php, line 81
 
 
 
+2018-03-13 10:15:36 Error: [Cake\View\Exception\MissingTemplateException] Template file "Pages\webroot\img\jb1.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\webroot\\img\\jb1.jpg.ctp',
+)
+Request URL: /pages/webroot/img/jb1.jpg
+Referer URL: http://localhost/csport/pages/equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Pages\\webroot\\i...')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render('webroot/img/jb1...', NULL)
+#2 C:\wamp64\www\csport\src\Controller\PagesController.php(61): Cake\Controller\Controller->render('webroot/img/jb1...')
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PagesController->display('webroot', 'img', 'jb1.jpg')
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 10:15:37 Error: [Cake\View\Exception\MissingTemplateException] Template file "Pages\webroot\img\jb1.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\webroot\\img\\jb1.jpg.ctp',
+)
+Request URL: /pages/webroot/img/jb1.jpg
+Referer URL: http://localhost/csport/pages/equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Pages\\webroot\\i...')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render('webroot/img/jb1...', NULL)
+#2 C:\wamp64\www\csport\src\Controller\PagesController.php(61): Cake\Controller\Controller->render('webroot/img/jb1...')
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PagesController->display('webroot', 'img', 'jb1.jpg')
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 10:16:32 Error: [Cake\View\Exception\MissingTemplateException] Template file "Pages\csport\webroot\img\jb1.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\csport\\webroot\\img\\jb1.jpg.ctp',
+)
+Request URL: /pages/csport/webroot/img/jb1.jpg
+Referer URL: http://localhost/csport/pages/equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Pages\\csport\\we...')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render('csport/webroot/...', NULL)
+#2 C:\wamp64\www\csport\src\Controller\PagesController.php(61): Cake\Controller\Controller->render('csport/webroot/...')
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PagesController->display('csport', 'webroot', 'img', 'jb1.jpg')
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 10:16:33 Error: [Cake\View\Exception\MissingTemplateException] Template file "Pages\csport\webroot\img\jb1.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\csport\\webroot\\img\\jb1.jpg.ctp',
+)
+Request URL: /pages/csport/webroot/img/jb1.jpg
+Referer URL: http://localhost/csport/pages/equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Pages\\csport\\we...')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render('csport/webroot/...', NULL)
+#2 C:\wamp64\www\csport\src\Controller\PagesController.php(61): Cake\Controller\Controller->render('csport/webroot/...')
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PagesController->display('csport', 'webroot', 'img', 'jb1.jpg')
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 10:16:40 Error: [Cake\View\Exception\MissingTemplateException] Template file "Pages\jb1.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\jb1.jpg.ctp',
+)
+Request URL: /pages/jb1.jpg
+Referer URL: http://localhost/csport/pages/equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Pages\\jb1.jpg')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render('jb1.jpg', NULL)
+#2 C:\wamp64\www\csport\src\Controller\PagesController.php(61): Cake\Controller\Controller->render('jb1.jpg')
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PagesController->display('jb1.jpg')
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-03-13 10:16:42 Error: [Cake\View\Exception\MissingTemplateException] Template file "Pages\jb1.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\jb1.jpg.ctp',
+)
+Request URL: /pages/jb1.jpg
+Referer URL: http://localhost/csport/pages/equipe
+Stack Trace:
+#0 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\View\View.php(761): Cake\View\View->_getViewFileName('Pages\\jb1.jpg')
+#1 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render('jb1.jpg', NULL)
+#2 C:\wamp64\www\csport\src\Controller\PagesController.php(61): Cake\Controller\Controller->render('jb1.jpg')
+#3 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PagesController->display('jb1.jpg')
+#4 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PagesController))
+#6 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\BaseApplication.php(108): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(104): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(97): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 C:\wamp64\www\csport\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\wamp64\www\csport\vendor\cakephp\cakephp\src\Http\Server.php(81): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\wamp64\www\csport\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
