@@ -31,9 +31,18 @@ class WorkoutsTable extends Table {
 
         $all_workouts = $this
             ->find()
-            ->select(['date','end_date','location_name','description','sport']);
+            ->select(['id','date','end_date','location_name','description','sport']);
 
         return $all_workouts;
+    }
+
+    public function SupprimerSeance($IDseance)
+    {
+
+        $entity_seance = $this->get($IDseance);
+        return $this->delete($entity_seance);
+
+
     }
 
 

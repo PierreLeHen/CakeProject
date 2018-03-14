@@ -6,7 +6,7 @@
        <th>Serial</th>
        <th>Description</th>
        <th>Trusted</th>
-       <th> Gestion </th>
+       <th>Gestion</th>
 
    </tr>
 <?php foreach ($devices_trusted_array as $row){

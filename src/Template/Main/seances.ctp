@@ -23,11 +23,14 @@ if (isset($error)) {
             <th>Lieu</th>
             <th>Date de début</th>
             <th>Date de fin</th>
+            <th>Gestion</th>
         </tr>
 
         <?php foreach ($workouts_array as $row) {
 
-            echo "<tr><td>" . $row['description'] . "</td><td>" . $row['sport'] . "</td><td>" . $row['location_name'] . "</td><td>" . $row['date'] . "</td><td>" . $row['end_date'] . "</td></tr>";
+            $seanceid = $row['id'];
+
+            echo "<tr><td>" . $row['description'] . "</td><td>" . $row['sport'] . "</td><td>" . $row['location_name'] . "</td><td>" . $row['date'] . "</td><td>" . $row['end_date'] . "</td><td>".$this->Form->postButton("Supprimer", ["controller"=>"Main", "action"=>"SupprimerSeance/". $seanceid])."</td></tr>";
 
         }
         ?>

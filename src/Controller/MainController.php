@@ -66,6 +66,15 @@ class MainController extends AppController
 
     }
 
+    public function SupprimerSeance($IDseance)
+    {
+        $this->loadModel("Workouts");
+        $this->Workouts->supprimerseance($IDseance);
+        return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
+
+
+    }
+
     public function AutoriserObjet($IDobjet)
     {
         $this->loadModel("Devices");
