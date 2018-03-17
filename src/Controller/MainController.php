@@ -161,7 +161,8 @@ class MainController extends AppController
         $this->set("workouts_array", $list);
 
         $new = $this->Workouts->newEntity();
-        if ($this->request->is("post")) {
+        if ($this->request->is("post"))
+        {
             $date = \Cake\I18n\Time::create($this->request->data['date']['year'], $this->request->data['date']['month'], $this->request->data['date']['day'], $this->request->data['date']['hour'], $this->request->data['date']['minute']);
             $end_date = \Cake\I18n\Time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
             $lieu = $this->request->data("location_name");
@@ -187,11 +188,12 @@ class MainController extends AppController
 
             $description = $this->request->data('description');
             $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id);
-
+            $this->redirect(['controller'=>'Main','action'=>'seances']);
 
 
 
         }
+
         $this->set("new", $new);
     }
 
