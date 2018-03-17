@@ -12,10 +12,12 @@ use Cake\ORM\Table;
 use Cake\I18n\Time;
 use Cake\I18n\Date;
 
-class WorkoutsTable extends Table {
+class WorkoutsTable extends Table
+{
 
-    public function addWorkouts($date, $end_date,$sport,$description,$lieu,$member_id){
-        $new = $this -> newEntity();
+    public function addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id)
+    {
+        $new = $this->newEntity();
         $new->date = $date;
         $new->end_date = $end_date;
         $new->location_name = $lieu;
@@ -31,9 +33,15 @@ class WorkoutsTable extends Table {
 
         $all_workouts = $this
             ->find()
-            ->select(['id','date','end_date','location_name','description','sport']);
+            ->select(['id', 'date', 'end_date', 'location_name', 'description', 'sport'])
+            ->order(array("date" => "DESC"));
 
         return $all_workouts;
+    }
+
+    public function getWorkoutStatus()
+    {
+
     }
 
     public function SupprimerSeance($IDseance)

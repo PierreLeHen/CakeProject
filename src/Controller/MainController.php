@@ -72,6 +72,13 @@ class MainController extends AppController
         $this->Workouts->supprimerseance($IDseance);
         return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
+    }
+
+    public function SupprimerLog($IDlog)
+    {
+        $this->loadModel("Logs");
+        $this->Logs->supprimerlog($IDlog);
+        return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
     }
 
@@ -142,69 +149,87 @@ class MainController extends AppController
     public function seances()
     {
         $this->loadModel("Workouts");
+        $this->loadModel("Logs");
         $workouts_array = $this->Workouts->getAllWorkouts();
         $this->set("workouts_array", $workouts_array);
-
-
-        //$this->loadModel("Workouts");
-        //$description = $this->request->data('description');
-        //$sport = $this->request->data('sport');
-        //$lieu = $this->request->data('lieu');
-        //$date = $this->request->data('date');
-        //$end_date = $this->request->data('end_date');
-        //$member_id = $this->Auth->user('id');
-
-
-        $new =$this->Workouts->newEntity();
-        if($this->request->is("post"))
+        $list =[];
+        foreach ($workouts_array as $idw => $work)
         {
+            $seanceLogs= $this->Logs->getLogs($work->id);
+            $list[$idw] = [ 'workout' => $work, 'logs' => $seanceLogs];
+        }
+        $this->set("workouts_array", $list);
+
+        $new = $this->Workouts->newEntity();
+        if ($this->request->is("post")) {
             $date = \Cake\I18n\Time::create($this->request->data['date']['year'], $this->request->data['date']['month'], $this->request->data['date']['day'], $this->request->data['date']['hour'], $this->request->data['date']['minute']);
             $end_date = \Cake\I18n\Time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
             $lieu = $this->request->data("location_name");
             $member_id = $this->Auth->user('id');
 
-            if($this->request->data('sport')==0)
-            $sport = "Course";
+            if ($this->request->data('sport') == 0)
+                $sport = "Course";
 
-            if($this->request->data('sport')==1)
+            if ($this->request->data('sport') == 1)
                 $sport = "Biceps";
 
-            if($this->request->data('sport')==2)
+            if ($this->request->data('sport') == 2)
                 $sport = "Pompes";
 
-            if($this->request->data('sport')==3)
+            if ($this->request->data('sport') == 3)
                 $sport = "Abdos";
 
-            if($this->request->data('sport')==4)
+            if ($this->request->data('sport') == 4)
                 $sport = "Triceps";
 
-            if($this->request->data('sport')==5)
+            if ($this->request->data('sport') == 5)
                 $sport = "Rameur";
 
-
             $description = $this->request->data('description');
+            $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id);
 
-            $this->Workouts->addWorkouts($date, $end_date,$sport,$description,$lieu,$member_id);
+
+
+
         }
-        $this->set("new",$new);
-        //$new->member_id = $member_id;
-        //$new->date = $date;
-        //$new->end_date = $end_date;
-        //$new->location_name = $lieu;
-        //$new->description = $description;
-        //$new->sport = $sport;
-
-        //$this->Workouts->save($new);
-
-
-
-
+        $this->set("new", $new);
     }
 
+    public function addLog($workout_id)
+    {
+        $this->loadModel("Logs");
+
+        $new = $this->Logs->newEntity();
+        if ($this->request->is("post")) {
+            $member_id = $this->Auth->user('id');
+
+            if ($this->request->data('log_type') == 0)
+                $log_type = "Course";
+
+            if ($this->request->data('log_type') == 1)
+                $log_type = "Biceps";
+
+            if ($this->request->data('log_type') == 2)
+                $log_type = "Pompes";
+
+            if ($this->request->data('log_type') == 3)
+                $log_type = "Abdos";
+
+            if ($this->request->data('log_type') == 4)
+                $log_type = "Triceps";
+
+            if ($this->request->data('log_type') == 5)
+                $log_type = "Rameur";
 
 
+            $log_value = $this->request->data('log_value');
 
+            $this->Logs->addLogs($log_type, $log_value, $workout_id, $member_id);
 
+            $this->set("new", $new);
+        }
+        $this->redirect(['controller' => 'Main', 'action' => 'seances']);
+    }
 
 
     /**
@@ -222,21 +247,21 @@ class MainController extends AppController
         $randomKey = substr(md5(microtime()),0,10);
             $this->request->data['otp'] = $uniquecode;
             $getUserEmail = $this->Request->data['email'];
-            
+
             $user = $this->Users->patchEntity($user,$this->request->data);
             if($this->Users->save($user)){
               $bodyEmail = "You have successfully registered.";
               $bodyEmail .= "To active account please click on below link";
               $aLink = Router::url(array("controller"=>"users","action"=>"activate", $uniquecode, $randomKey),true);
               $bodyEmail .= '<p><br><br><a style="width:50%;color:#fff;text-decoration:none;background:#333;display:block;padding:10px;text-align:center;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;margin:10px auto " href="'.$aLink.'"> Please verify your email address </a></p>';
-               if($this->Main->sendEmail(['to'=>$getUserEmail,'subject'=>'Registration Complete','title'=>'Registration Complete','body'=>$bodyEmail]))    
+               if($this->Main->sendEmail(['to'=>$getUserEmail,'subject'=>'Registration Complete','title'=>'Registration Complete','body'=>$bodyEmail]))
                {
                   $this->Flash->success(__('Your account has been registered. please check your email address to activate your account'));
               return $this->redirect(['action' => 'mailCheck']);
                 }else{
                   $this->Flash->error(__('Registration not completed. Please try again.'));
                   return $this->redirect(['action' => 'index']);
-                }             
+                }
             }else{
               $this->Flash->error(__('Unable to register your account.'));
             }
@@ -247,13 +272,13 @@ class MainController extends AppController
     }
     $this->set('user',$user);
     $this->set('page_title',__('Registeration'));
-  }
+    }
                             ///Acrivation via le mail
-    public function activate($getUniCode='', $randomKey='') 
+    public function activate($getUniCode='', $randomKey='')
     {
        if(trim($getUniCode)!="" && $randomKey!="") {
          $getUniCode = filter_var($getUniCode, FILTER_SANITIZE_STRING);
-         $getUser = $this->Users->find('all',['conditions'=> ['otp'=> $getUniCode,'status'=> 0]])->first(); 
+         $getUser = $this->Users->find('all',['conditions'=> ['otp'=> $getUniCode,'status'=> 0]])->first();
          if($getUser) {
            $getUserId = $getUser->id;
            $updateActivate  = $this->Users->updateAll(['status'=> 1, 'otp'=> ''], ['id'=> $getUserId]);
@@ -262,8 +287,8 @@ class MainController extends AppController
          }
        }
 
-    }      
-*/
+    }
+    */
 }
 
 
