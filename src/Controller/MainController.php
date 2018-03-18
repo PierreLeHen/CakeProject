@@ -146,6 +146,13 @@ class MainController extends AppController
 
     }
 
+    public function classement()
+    {
+        $this->loadModel("Logs");
+        $classPas_array = $this->Logs->getClassPas();
+        $this->set("classPas_array", $classPas_array);
+    }
+
     public function seances()
     {
         $this->loadModel("Workouts");
@@ -169,7 +176,7 @@ class MainController extends AppController
             $member_id = $this->Auth->user('id');
 
             if ($this->request->data('sport') == 0)
-                $sport = "Course";
+                $sport = "Pas couru";
 
             if ($this->request->data('sport') == 1)
                 $sport = "Biceps";
@@ -206,7 +213,7 @@ class MainController extends AppController
             $member_id = $this->Auth->user('id');
 
             if ($this->request->data('log_type') == 0)
-                $log_type = "Course";
+                $log_type = "Pas couru";
 
             if ($this->request->data('log_type') == 1)
                 $log_type = "Biceps";

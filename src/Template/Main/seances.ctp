@@ -6,7 +6,7 @@
     // https://getbootstrap.com/docs/4.0/components/forms/
     echo $this->Form->create($new);
     echo $this->Form->input("description", array("class" => "form-control", "placeholder" => "Description", "label" => "Description"));
-    echo $this->Form->select('sport', ["Course", "Biceps", "Pompes", "Abdos", "Triceps", "Rameur"], ['multiple' => false, 'class' => 'form-control']);
+    echo $this->Form->select('sport', ["Pas couru", "Biceps", "Pompes", "Abdos", "Triceps", "Rameur"], ['multiple' => false, 'class' => 'form-control']);
     echo $this->Form->input("location_name", array("class" => "form-control", "placeholder" => "Entrez un lieu", "label" => "Lieu"));
     echo $this->Form->input("date", array("class" => "form-control", "type" => "datetime", "label" => "Début"));
     echo $this->Form->input("end_date", array("class" => "form-control", "type" => "datetime", "label" => "Fin"));
@@ -54,7 +54,7 @@
 
             echo "<details><summary>Ajouter un relevé</summary>";
             echo $this->Form->create(null, array('url' => array('controller' => 'Main', 'action' => 'addLog/'. $workout->id . '/' . $workout->date)));
-            echo $this->Form->select('log_type', ["Course", "Biceps", "Pompes", "Abdos", "Triceps", "Rameur"], ['multiple' => false, 'class' => 'form-control']);
+            echo $this->Form->select('log_type', ["Pas couru", "Biceps", "Pompes", "Abdos", "Triceps", "Rameur"], ['multiple' => false, 'class' => 'form-control']);
             echo $this->Form->input('log_value', array('class' => 'form-control', 'placeholder' => 'Valeur', 'label' => 'Valeur'));
             echo $this->Form->submit("Ajouter relevé", array("class" => "btn pagebtn float-right"));
             echo $this->Form->end();

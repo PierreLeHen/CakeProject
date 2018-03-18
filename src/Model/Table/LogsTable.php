@@ -57,5 +57,18 @@ class LogsTable extends Table
         return $all_logs;
     }
 
+    public function getClassPas()
+    {
+
+        $classPas = $this->find();
+            $classPas->select(['member_id','log_value' => $classPas->func()->SUM('log_value')])
+            ->group('member_id')
+            ->where(['log_type =' => 'Pas couru'])
+            ->order(['log_value' => 'DESC']);
+
+        return $classPas;
+
+    }
+
 
 }
