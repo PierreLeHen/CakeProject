@@ -22,30 +22,7 @@ class TrucController extends AppController
         $this->set("m", $m->toArray());
 
     }
-    public function register()
-    {
 
-    }
-    public function contact()
-    {
-
-    }
-    public function mentions()
-    {
-
-    }
-    public function equipe()
-    {
-
-    }
-    public function faq()
-    {
-
-    }
-    public function seances()
-    {
-
-    }
 
 
 
