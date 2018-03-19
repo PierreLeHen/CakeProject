@@ -149,8 +149,41 @@ class MainController extends AppController
     public function classement()
     {
         $this->loadModel("Logs");
-        $classPas_array = $this->Logs->getClassPas();
-        $this->set("classPas_array", $classPas_array);
+
+        $log_type = "Pas couru";
+        $classement_array = $this->Logs->getClass($log_type);
+
+        if ($this->request->is("post"))
+        {
+            $member_id = $this->Auth->user('id');
+
+            if ($this->request->data('classement') == 0)
+                $log_type = "Pas couru";
+
+            if ($this->request->data('classement') == 1)
+                $log_type = "Biceps";
+
+            if ($this->request->data('classement') == 2)
+                $log_type = "Pompes";
+
+            if ($this->request->data('classement') == 3)
+                $log_type = "Abdos";
+
+            if ($this->request->data('classement') == 4)
+                $log_type = "Triceps";
+
+            if ($this->request->data('classement') == 5)
+                $log_type = "Rameur";
+
+            $classement_array = $this->Logs->getClass($log_type);
+            $this->set("classement_array", $classement_array);
+            $this->set("log_type", $log_type);
+        }
+        $this->set("classement_array", $classement_array);
+        $this->set("log_type", $log_type);
+
+
+
     }
 
     public function seances()
