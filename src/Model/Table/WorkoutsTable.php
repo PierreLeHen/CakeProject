@@ -54,5 +54,34 @@ class WorkoutsTable extends Table
 
     }
 
+    public function getMemberId($id_workout)
+    {
+
+        $id_member = $this
+            ->find()
+            ->select(['member_id'])
+
+            ->where(['id =' => $id_workout])->first();
+
+        return $id_member->member_id;
+
+
+
+    }
+
+    public function getParametres($id_workout)
+    {
+
+        $workout_param = $this
+            ->find()
+
+            ->where(['id =' => $id_workout])->first();
+
+        return $workout_param;
+
+
+
+    }
+
 
 }

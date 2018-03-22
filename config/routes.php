@@ -50,6 +50,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/api/registerdevice/:id_member/:id_device/:description', ['controller' => 'Main', 'action'=>'newDevice'],['pass' => ['id_member','id_device','description']]);
+    $routes->connect('/api/workoutparameters/:serial_device/:id_workout', ['controller' => 'Main', 'action'=>'getParam'],['pass' => ['serial_device','id_workout']])->setMethods(['GET']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
