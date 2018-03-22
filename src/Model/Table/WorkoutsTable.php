@@ -28,13 +28,14 @@ class WorkoutsTable extends Table
     }
 
 
-    public function getAllWorkouts()
+    public function getAllWorkouts($id)
     {
 
         $all_workouts = $this
             ->find()
             ->select(['id', 'date', 'end_date', 'location_name', 'description', 'sport'])
-            ->order(array("date" => "DESC"));
+            ->order(array("date" => "DESC"))
+            ->where(['member_id =' => $id]);
 
         return $all_workouts;
     }

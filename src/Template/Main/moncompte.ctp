@@ -1,10 +1,6 @@
-<div> <p>Voici tous les mails de la base données : </p>
-<ul>
-<?php foreach ($mail_array as $row){
 
+<?php
 
-  echo "<li>".$row->email."</li>";}
+echo $mail;
   ?>
 
-</ul>
-</div>

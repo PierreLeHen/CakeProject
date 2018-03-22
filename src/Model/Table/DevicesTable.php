@@ -16,23 +16,22 @@ class DevicesTable extends Table
     /*
      * Getter pour récupérer tous les devices dans deux tableaux
      */
-    public function getAllDevicesTrusted()
+    public function getAllDevicesTrusted($id)
     {
 
         $all_trusted_devices = $this
             ->find()
-            ->select(['id','member_id','serial','description','trusted'])
-            ->where(['trusted =' => 1]);
+            ->where(['trusted =' => 1,'member_id =' => $id]);
         return $all_trusted_devices;
     }
 
-    public function getAllDevicesNotTrusted()
+    public function getAllDevicesNotTrusted($id)
     {
 
         $all_not_trusted_devices = $this
             ->find()
             ->select(['id','member_id','serial','description','trusted'])
-            ->where(['trusted =' => 0]);
+            ->where(['trusted =' => 0,'member_id =' => $id]);
         return $all_not_trusted_devices;
     }
 

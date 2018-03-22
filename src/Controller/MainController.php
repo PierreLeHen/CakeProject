@@ -38,8 +38,10 @@ class MainController extends AppController
     {
 
         $this->loadModel("Members");
-        $mail_array = $this->Members->getAllEmail();
-        $this->set("mail_array", $mail_array);
+        $mail_user = $this->Auth->user('email');
+        $this->set('mail',$mail_user);
+        #$mail_array = $this->Members->getAllEmail();
+        #$this->set("mail_array", $mail_array);
 
     }
 
@@ -49,11 +51,11 @@ class MainController extends AppController
         $this->loadModel("Devices");
 
         //tableau des objets trusted
-        $devices_trusted_array = $this->Devices->getAllDevicesTrusted();
+        $devices_trusted_array = $this->Devices->getAllDevicesTrusted($this->Auth->user('id'));
         $this->set("devices_trusted_array", $devices_trusted_array);
 
         //tableau des objets non authorized
-        $devices_not_trusted_array = $this->Devices->getAllDevicesNotTrusted();
+        $devices_not_trusted_array = $this->Devices->getAllDevicesNotTrusted($this->Auth->user('id'));
         $this->set("devices_not_trusted_array", $devices_not_trusted_array);
     }
 
@@ -149,15 +151,48 @@ class MainController extends AppController
     public function classement()
     {
         $this->loadModel("Logs");
-        $classPas_array = $this->Logs->getClassPas();
-        $this->set("classPas_array", $classPas_array);
+
+        $log_type = "Pas couru";
+        $classement_array = $this->Logs->getClass($log_type);
+
+        if ($this->request->is("post"))
+        {
+            $member_id = $this->Auth->user('id');
+
+            if ($this->request->data('classement') == 0)
+                $log_type = "Pas couru";
+
+            if ($this->request->data('classement') == 1)
+                $log_type = "Biceps";
+
+            if ($this->request->data('classement') == 2)
+                $log_type = "Pompes";
+
+            if ($this->request->data('classement') == 3)
+                $log_type = "Abdos";
+
+            if ($this->request->data('classement') == 4)
+                $log_type = "Triceps";
+
+            if ($this->request->data('classement') == 5)
+                $log_type = "Rameur";
+
+            $classement_array = $this->Logs->getClass($log_type);
+            $this->set("classement_array", $classement_array);
+            $this->set("log_type", $log_type);
+        }
+        $this->set("classement_array", $classement_array);
+        $this->set("log_type", $log_type);
+
+
+
     }
 
     public function seances()
     {
         $this->loadModel("Workouts");
         $this->loadModel("Logs");
-        $workouts_array = $this->Workouts->getAllWorkouts();
+        $workouts_array = $this->Workouts->getAllWorkouts($this->Auth->user('id'));
         $this->set("workouts_array", $workouts_array);
         $list =[];
         foreach ($workouts_array as $idw => $work)

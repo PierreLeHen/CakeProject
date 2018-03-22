@@ -1,23 +1,28 @@
-
-<div> <h2>Classement des pas courus</h2>
+<div><h2>Classement général</h2>
+    <h3>Classer par :
+        <?php
+        echo $this->Form->create(null);
+        echo $this->Form->select('classement', ["Pas couru", "Biceps", "Pompes", "Abdos", "Triceps", "Rameur"], ['multiple' => false]);
+              echo $this->Form->submit("Trier", array("class" => "btn pagebtn float-right"));
+              echo $this->Form->end();
+              ?>
+    </h3>
     <table>
         <tr>
             <th>Rang</th>
             <th>member ID</th>
-            <th>Nombre de pas courus</th>
+            <th>Nombre <?php echo $log_type ?></th>
 
         </tr>
 
 
-        <?php $cnt = 1;?>
+        <?php $cnt = 1; ?>
 
 
-        <?php foreach ($classPas_array as $row){
+        <?php foreach ($classement_array as $row) {
 
-            echo "<tr><td>".$cnt."</td><td>".$row['member_id']."</td><td>".$row['log_value']."</td></tr>";
+            echo "<tr><td>" . $cnt . "</td><td>" . $row['member_id'] . "</td><td>" . $row['log_value'] . "</td></tr>";
             $cnt++;
-
-
 
 
         }
