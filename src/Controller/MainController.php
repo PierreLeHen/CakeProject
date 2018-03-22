@@ -10,6 +10,8 @@ use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
 use Cake\Error\Debugger;
 use Cake\Routing\Router;
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 
 
 class MainController extends AppController
@@ -36,13 +38,55 @@ class MainController extends AppController
 
     public function moncompte()
     {
-
         $this->loadModel("Members");
         $mail_user = $this->Auth->user('email');
-        $this->set('mail',$mail_user);
-        #$mail_array = $this->Members->getAllEmail();
+        $user_id = $this->Auth->user('id');
+        $this->set('mail', $mail_user);
+        $this->set('img', $user_id);
+        $dos = new Folder(WWW_ROOT . 'img/img_pp');
+        if ($this->request->is('post'))//si on a envoyé un formulaire
+        {
+            $ext = strtolower(pathinfo($this->request->data['user_img']['name'], PATHINFO_EXTENSION));
+            if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png'))) {
+                $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png)$');
+                if (!empty($files)) {
+                    foreach ($files as $file) {
+                        $file = new File($dos->pwd() . DS . $file);
+                        $file->delete();
+                        $file->close();
+                    }
+                }
+                move_uploaded_file($this->request->data['user_img']['tmp_name'], 'img/img_pp' . DS . $this->Auth->user("id") . '.' . $ext);
+            } else
+                {
+                $this->Flash->error(__("Modification impossible"));
+            }
+        }
+        $files = $dos->find($this->Auth->user("id").'\.(?:jpg|jpeg|png)$');
+        if(empty($files))
+        {
+            $user_img_ext = "none";
+        }
+        else{
+            $user_img_ext = strtolower(pathinfo($files[0], PATHINFO_EXTENSION));
+        }
+        $this->set("user_img_ext",$user_img_ext);
+            #$mail_array = $this->Members->getAllEmail();
         #$this->set("mail_array", $mail_array);
 
+    }
+
+
+    public function supprimerphotos()
+    {
+        $dos = new Folder(WWW_ROOT . 'img/img_pp');
+        $files = $dos->find($this->Auth->user("id").'\.(?:jpg|jpeg|png)$');
+        foreach ($files as $file) {
+            $file = new File($dos->pwd() . DS . $file);
+            $file->delete();
+            $file->close();
+        }
+        return $this->redirect(['controller' => 'Main', 'action' => 'moncompte']);
     }
 
     ///Affichage des Objets Connectes
@@ -128,7 +172,6 @@ class MainController extends AppController
 
 
     public function inscriptions()
-
     {
         $rajout = 3;
         $this->loadModel('Members');
@@ -155,8 +198,7 @@ class MainController extends AppController
         $log_type = "Pas couru";
         $classement_array = $this->Logs->getClass($log_type);
 
-        if ($this->request->is("post"))
-        {
+        if ($this->request->is("post")) {
             $member_id = $this->Auth->user('id');
 
             if ($this->request->data('classement') == 0)
@@ -185,7 +227,6 @@ class MainController extends AppController
         $this->set("log_type", $log_type);
 
 
-
     }
 
     public function seances()
@@ -194,17 +235,15 @@ class MainController extends AppController
         $this->loadModel("Logs");
         $workouts_array = $this->Workouts->getAllWorkouts($this->Auth->user('id'));
         $this->set("workouts_array", $workouts_array);
-        $list =[];
-        foreach ($workouts_array as $idw => $work)
-        {
-            $seanceLogs= $this->Logs->getLogs($work->id);
-            $list[$idw] = [ 'workout' => $work, 'logs' => $seanceLogs];
+        $list = [];
+        foreach ($workouts_array as $idw => $work) {
+            $seanceLogs = $this->Logs->getLogs($work->id);
+            $list[$idw] = ['workout' => $work, 'logs' => $seanceLogs];
         }
         $this->set("workouts_array", $list);
 
         $new = $this->Workouts->newEntity();
-        if ($this->request->is("post"))
-        {
+        if ($this->request->is("post")) {
             $date = \Cake\I18n\Time::create($this->request->data['date']['year'], $this->request->data['date']['month'], $this->request->data['date']['day'], $this->request->data['date']['hour'], $this->request->data['date']['minute']);
             $end_date = \Cake\I18n\Time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
             $lieu = $this->request->data("location_name");
@@ -230,8 +269,7 @@ class MainController extends AppController
 
             $description = $this->request->data('description');
             $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id);
-            $this->redirect(['controller'=>'Main','action'=>'seances']);
-
+            $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
 
         }
