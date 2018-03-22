@@ -1,0 +1,173 @@
+@font-face {
+    font-family:"Futura";
+    src: url("font/Futura Heavy BT.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family:"Proxima Nova";
+    src: url("font/proximanova-regular-webfont.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family:"Proxima Nova";
+    src: url("font/proximanova-bold-webfont.ttf");
+    font-weight: 700;
+}
+body{
+	background-color: #efefef;
+	background-image: url("images/bg2.jpg");
+	    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+h1{
+        font-family:"Futura" !important;
+        font-weight: 700;
+        font-size: 35pt;
+        text-transform: uppercase;
+        color: #444;
+
+
+        margin-bottom: 14px;
+}
+h2{
+    font-family: "Proxima Nova"!important;
+    font-size: 20px!important;
+    font-weight: 700!important;
+
+
+}
+
+
+nav{
+    /*le contenant des icones à droite*/
+    position: fixed;
+    z-index: 10;
+      top: 67px;
+  right: 70px;
+  padding:0px;
+  width: 60px;
+
+}
+
+.icone{
+    /*ce sont les icones de nav*/
+    margin: 10px;
+padding: 35px;
+    background-color: #FFF;
+      display: inline-block;
+      border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32); 
+box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32);
+/*meme si il n'y a pas d'image de background encore defini je fais ça pour evite de le copier dans tout les cas d'icone*/
+        background-repeat: no-repeat;
+    background-size: 24px 24px;
+        background-position: center; 
+        /*fin de la partie background-image */
+    transition: box-shadow 0.25s ease-in-out;
+
+
+}
+
+.icone:hover{
+    box-shadow: 0px 0px 20px 0px  rgba(177,194,109,1)
+
+    }
+    #retour{
+/*icone retour*/
+    background-image: url("images/retour.png");
+
+}
+.container
+
+{
+    width: 100% !important;
+    padding: 0px !important;
+
+}
+th, td {
+    border-bottom: 1px solid #ddd !important ;
+    font-family:"Proxima Nova" !important;
+     font-size:16px !important;
+         padding: 10px 0px !important;
+
+}
+th{
+    padding: 10px 0px !important;
+    color:  #8c8c60 !important;
+}
+
+
+section{
+        float: none;
+    padding:100px 100px 50px 100px!important;
+    margin-top: 70px;
+    background-color: white;
+    opacity: 1;
+-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.17); 
+box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.17);
+
+}
+#ligne
+/*c'est la ligne sous le classement*/
+{
+    height: 8px;
+    width: 60px;
+    background-color: #8c8c60;
+
+        margin-bottom: 45px;
+}
+table{
+    margin: 50px 0px !important;
+}
+button{
+
+ padding: 5px!important;
+
+ font-style: normal;
+ text-decoration:none;
+ font-weight:bold!important;
+ font-family:"Proxima Nova";
+
+ color: #8c8c60!important;
+ border: 3px solid  #8c8c60!important;
+ background-color: hsla(0,0%,100%,0.00)!important;
+
+ transition: all 0.3s ease-in-out;
+}
+button:hover
+{
+  background:#8c8c60!important;
+
+  color: #FFF!important;
+
+}
+
+footer
+{
+    margin-top: 100px;
+
+}
+footer a
+{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    margin: 0px!important;
+    padding: 0px 10px!important;
+        font-family:"Proxima Nova" !important;
+     font-size:16px !important;
+     text-decoration: none!important;
+      color: #8c8c60!important;
+
+       transition: all 0.3s ease-in-out;
+}
+footer a:hover
+{
+
+  color: #000!important;
+
+}
