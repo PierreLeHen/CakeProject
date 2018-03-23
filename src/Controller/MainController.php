@@ -313,6 +313,40 @@ class MainController extends AppController
         $this->redirect(['controller' => 'Main', 'action' => 'seances']);
     }
 
+    public function badges()
+    {
+        $this->loadModel("Earnings");
+
+        $badge_type = "1ère séance enregistrée";
+        $badges_array = $this->Earnings->getClass($badge_type);
+
+        if ($this->request->is("post")) {
+            $member_id = $this->Auth->user('id');
+
+            if ($this->request->data('badges') == 0)
+                $badge_type = "1ère séance enregistrée";
+
+            if ($this->request->data('badges') == 1)
+                $badge_type = "5ème séance enregistrée";
+
+            if ($this->request->data('badges') == 2)
+                $badge_type = "1er match enregistré";
+
+            if ($this->request->data('badges') == 3)
+                $badge_type = "Abdos en béton";
+
+            if ($this->request->data('badges') == 4)
+                $badge_type = "Marathonien";
+
+
+            $badges_array = $this->Earnings->getClass($badge_type);
+            $this->set("badges_array", $badges_array);
+            $this->set("badge_type", $badge_type);
+        }
+        $this->set("badges_array", $badges_array);
+        $this->set("badge_type", $badge_type);
+    }
+
 
     /**
      * Activate method

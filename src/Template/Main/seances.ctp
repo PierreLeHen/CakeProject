@@ -1,4 +1,6 @@
-<h1>Séances</h1> <h2><?php echo \Cake\I18n\Time::now() ?></h2>
+<h1>Séances</h1>
+
+<h2><?php echo \Cake\I18n\Time::now('Europe/Paris');?></h2>
 
 <details>
     <Summary>Commencer une nouvelle séance</Summary>
