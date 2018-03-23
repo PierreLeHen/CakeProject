@@ -1,4 +1,4 @@
-
+<?= $this->element('home');?>
 <body>
   <article class="col-md-7 col-lg-5 col-sm-10 col-xs-10 col-md-offset-2 col-lg-offset-1 col-xs-offset-1 col-sm-offset-1 " >
     <h1 >  OCRES SPORT</h1>
@@ -9,7 +9,7 @@
       echo $this->Form->create('Inscription',['label'=>'','div' => false]);
       echo $this->Form->control('email',['class'=>'login','placeholder'=>'login','label'=>'','div' => false]); 
       echo $this->Form->control('password',['class'=>'login','label'=>'','div' => false]); 
-      echo $this->Form->button('> Se connecter <',['id'=>'submit']); 
+      echo $this->Form->button('Se connecter',['id'=>'submit']); 
       echo $this->Form->end();?>
          <?= $this->Flash->render() ?>
   </article>	

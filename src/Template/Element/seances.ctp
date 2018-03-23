@@ -8,5 +8,6 @@ echo $this->Html->css('home');?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'devices'), ['class'=>'icone','id'=>'iot']); ?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'seances'), ['class'=>'current','id'=>'current_seance']); ?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classement'), ['class'=>'icone','id'=>'classement']); ?>
+  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classsement'), ['class'=>'icone','id'=>'badge']); ?>
 </nav>
 
