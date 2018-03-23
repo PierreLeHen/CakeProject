@@ -1,3 +1,4 @@
+<?= $this->element('classement');?>
 <div><h2>Classement général</h2>
     <h3>Classer par :
         <?php

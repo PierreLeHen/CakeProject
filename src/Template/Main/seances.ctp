@@ -1,3 +1,4 @@
+<?= $this->element('seances');?>
 <h1>Séances</h1> <h2><?php echo \Cake\I18n\Time::now() ?></h2>
 
 <details>
