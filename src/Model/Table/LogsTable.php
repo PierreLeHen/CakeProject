@@ -48,6 +48,13 @@ class LogsTable extends Table
 
     }
 
+    public function Supprimerleslogs($IDworkout)
+    {
+
+        return $this->deleteAll(['workout_id' => $IDworkout]);
+
+    }
+
     public function getLogs($workoutid)
     {
         $all_logs = $this
@@ -67,6 +74,27 @@ class LogsTable extends Table
             ->order(['log_value' => 'DESC']);
 
         return $classement;
+
+    }
+
+    public function getlogid($id_member,$log_type,$id_workout)
+    {
+
+        $log = $this->find();
+        $log->select(['id'])
+            ->where(['member_id =' => $id_member,'log_type =' => $log_type, 'workout_id = '=>$id_workout])->first();
+
+        return $log;
+    }
+
+    public function changelogvalue($logid,$log_value)
+
+    {
+
+        $logtochange_array= $this->findById($logid)->toArray();
+        $logtochange=$logtochange_array[0];
+       $logtochange->log_value += $log_value;
+        return $this->save($logtochange);
 
     }
 
