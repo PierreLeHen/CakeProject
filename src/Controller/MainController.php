@@ -268,7 +268,8 @@ class MainController extends AppController
                 $sport = "Rameur";
 
             $description = $this->request->data('description');
-            $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id);
+            $contest_id = $this->request->data('contest');
+            $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id, $contest_id);
             $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
 
