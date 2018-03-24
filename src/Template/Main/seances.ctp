@@ -2,6 +2,7 @@
 <?= $this->element('seances');?>
 <h1>Séances</h1> <h2><?php echo \Cake\I18n\Time::now('Europe/Paris') ?></h2>
 
+
 <details>
     <Summary>Commencer une nouvelle séance</Summary>
     <?php
@@ -46,7 +47,7 @@
             $match = "";
             if($workout->contest_id != 0)
             {
-                $match = "- Match";
+                $match = " - Match";
             }
             $logs=[];
             foreach ($row['logs'] as $log)
@@ -54,7 +55,7 @@
                 $logs[]=$log->log_type." : ".$log->log_value. " : ". $this->Form->postLink("X", ["controller" => "Main", "action" => "SupprimerLog/" . $log->id]);
             }
 
-            echo "<tr><td>" . $workout->description ." ". $match . "</td>" .
+            echo "<tr><td>" . $workout->description ." " .$match . "</td>" .
                 "<td>" . $workout->sport . "</td>" .
                 "<td>" . $workout->location_name . "</td>" .
                 "<td>" . $workout->date . "</td>" .
