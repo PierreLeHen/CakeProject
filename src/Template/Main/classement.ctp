@@ -11,7 +11,7 @@
     <table>
         <tr>
             <th>Rang</th>
-            <th>member ID</th>
+            <th>ID Membre</th>
             <th>Nombre <?php echo $log_type ?></th>
 
         </tr>

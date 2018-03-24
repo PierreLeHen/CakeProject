@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+<h1>Séances</h1>
+
+<h2><?php echo \Cake\I18n\Time::now('Europe/Paris');?></h2>
+=======
 <?= $this->element('seances');?>
 <h1>Séances</h1> <h2><?php echo \Cake\I18n\Time::now() ?></h2>
+>>>>>>> 0a61a9e26b1db89db2ad25588a1340811f6b08b9
 
 <details>
     <Summary>Commencer une nouvelle séance</Summary>
@@ -11,6 +17,7 @@
     echo $this->Form->input("location_name", array("class" => "form-control", "placeholder" => "Entrez un lieu", "label" => "Lieu"));
     echo $this->Form->input("date", array("class" => "form-control", "type" => "datetime", "label" => "Début"));
     echo $this->Form->input("end_date", array("class" => "form-control", "type" => "datetime", "label" => "Fin"));
+    echo $this->Form->radio('contest', ["Pas match","Match"]);
     echo $this->Form->submit("Ajouter séance", array("class" => "btn pagebtn float-right", "controller" => "Main", "action" => "ajouterseance/"));
     echo $this->Form->end();
 
@@ -39,14 +46,20 @@
         foreach ($workouts_array as $row)
         {
             //$seanceid = $row['id'];
+
             $workout = $row['workout'];
+            $match = "";
+            if($workout->contest_id != 0)
+            {
+                $match = "- Match";
+            }
             $logs=[];
             foreach ($row['logs'] as $log)
             {
                 $logs[]=$log->log_type." : ".$log->log_value. " : ". $this->Form->postLink("X", ["controller" => "Main", "action" => "SupprimerLog/" . $log->id]);
             }
 
-            echo "<tr><td>" . $workout->description . "</td>" .
+            echo "<tr><td>" . $workout->description ." ". $match . "</td>" .
                 "<td>" . $workout->sport . "</td>" .
                 "<td>" . $workout->location_name . "</td>" .
                 "<td>" . $workout->date . "</td>" .
