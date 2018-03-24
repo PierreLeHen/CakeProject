@@ -47,8 +47,8 @@ class MainController extends AppController
         if ($this->request->is('post'))//si on a envoyé un formulaire
         {
             $ext = strtolower(pathinfo($this->request->data['user_img']['name'], PATHINFO_EXTENSION));
-            if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png'))) {
-                $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png)$');
+            if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png', 'gif'))) {
+                $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
                 if (!empty($files)) {
                     foreach ($files as $file) {
                         $file = new File($dos->pwd() . DS . $file);
@@ -61,7 +61,7 @@ class MainController extends AppController
                 $this->Flash->error(__("Modification impossible"));
             }
         }
-        $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png)$');
+        $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
         if (empty($files)) {
             $user_img_ext = "none";
         } else {
@@ -77,7 +77,7 @@ class MainController extends AppController
     public function supprimerphotos()
     {
         $dos = new Folder(WWW_ROOT . 'img/img_pp');
-        $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png)$');
+        $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
         foreach ($files as $file) {
             $file = new File($dos->pwd() . DS . $file);
             $file->delete();
