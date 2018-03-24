@@ -349,6 +349,45 @@ class MainController extends AppController
     }
 
 
+    public function newDevice($id_member, $id_device, $description)
+    {
+
+
+        $this->loadModel("Devices");
+        $this->Devices->addDevice($id_member, $id_device, $description);
+        return $this->redirect(['controller' => 'Main', 'action' => 'devices']);
+    }
+
+    public function getParam($serial_device,$id_workout)
+    {
+
+        $this->loadModel("Devices");
+        $this->loadModel("Workouts");
+        $this->viewBuilder()->className('Json');
+        $getidmember = $this->Workouts->getMemberId($id_workout);
+        $check = $this->Devices->checkAuthorization($serial_device, $getidmember);
+        if($check==1)
+        {
+
+            $Param = $this->Workouts->getParametres($id_workout);
+            $this->set(array(
+                'Param'=>$Param,'_serialize' =>array('Param')
+
+
+            ));
+
+
+        }
+        if($check==0)
+        {
+
+
+        }
+
+
+    }
+
+
     /**
      * Activate method
      *

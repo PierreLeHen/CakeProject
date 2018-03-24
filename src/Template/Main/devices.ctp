@@ -1,3 +1,4 @@
+<?= $this->element('devices');?>
 <div>
     <h2>Objets autorisés</h2>
     <table>

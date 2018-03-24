@@ -54,6 +54,32 @@ class DevicesTable extends Table
 
     }
 
+    public function addDevice($id_member, $id_device, $description)
+    {
+
+        $new = $this->newEntity();
+        $new->member_id = $id_member;
+        $new->serial = $id_device;
+        $new->description = $description;
+        $new->trusted = 0;
+
+        $this->save($new);
+    }
+
+    public function checkAuthorization($serial_device, $id)
+    {
+
+        $check = $this
+            ->find()
+            ->select(['trusted'])
+            ->where(['serial =' => $serial_device,'member_id =' => $id])->first();
+        return $check->trusted;
+
+     
+        
+        
+    }
+
 
 
 }

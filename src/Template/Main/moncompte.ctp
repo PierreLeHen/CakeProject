@@ -1,3 +1,4 @@
+<?= $this->element('moncompte');?>
 <h1>Mon compte</h1>
 
 <div>

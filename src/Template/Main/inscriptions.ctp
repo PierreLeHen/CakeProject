@@ -1,4 +1,4 @@
-
+<?= $this->element('menu');?>
 <html>
     <head>
         <title>Inscription</title>
