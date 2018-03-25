@@ -7,8 +7,8 @@ echo $this->Html->css('home');?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'moncompte'), ['class'=>'icone','id'=>'profil']); ?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'devices'), ['class'=>'icone','id'=>'iot']); ?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'seances'), ['class'=>'icone','id'=>'seance']); ?>
- <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classsement'), ['class'=>'icone','id'=>'classement']); ?>
- <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classsement'), ['class'=>'icone','id'=>'curent_badge']); ?>
+ <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classement'), ['class'=>'icone','id'=>'classement']); ?>
+ <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classement'), ['class'=>'icone','id'=>'curent_badge']); ?>
 </nav>
 
 

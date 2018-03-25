@@ -10,7 +10,7 @@
     echo $this->Html->image('img_pp/'.$img.'.'.$user_img_ext, array('width' => '200px'));
     echo $mail;
     echo $this->Form->create(null, array('type' => 'file'));
-    echo $this->Form->input('user_img', array('label' => 'Télécharger une image (.jpg, .jpeg. png)','type' => 'file'));
+    echo $this->Form->input('user_img', array('label' => 'Télécharger une image (.jpg, .jpeg, .png, .gif)','type' => 'file'));
     echo $this->Form->Submit('Modifier la photo');
     echo $this->Form->end();
     echo $this->Form->postButton("Supprimer", ["controller" => "Main", "action" => "supprimerphotos/"]);

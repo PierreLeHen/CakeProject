@@ -52,7 +52,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->connect('/api/registerdevice/:id_member/:id_device/:description', ['controller' => 'Main', 'action'=>'newDevice'],['pass' => ['id_member','id_device','description']]);
     $routes->connect('/api/workoutparameters/:serial_device/:id_workout', ['controller' => 'Main', 'action'=>'getParam'],['pass' => ['serial_device','id_workout']])->setMethods(['GET']);
-    $routes->connect('/api/addlog/:serial_device/:id_workout/:id_member/:log_type/:log_value', ['controller'=>'Main', 'action'=>'IncLogVal'],['pass' => ['serial_device','id_workout','id_member','log_type','log_value']]);
+    $routes->connect('/api/getsummary/:serial_device',['controller'=>'Sports', 'action'=>'getSummary'],['pass'=>['serial_device']])->setMethods(['GET']);
+    $routes->connect('/api/addlog/:serial_device/:id_workout/:id_member/:log_type/:log_value', ['controller'=>'Main', 'action'=>'AddLogVal'],['pass' => ['serial_device','id_workout','id_member','log_type','log_value']]);
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */

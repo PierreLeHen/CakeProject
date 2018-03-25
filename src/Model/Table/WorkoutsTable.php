@@ -34,7 +34,7 @@ class WorkoutsTable extends Table
 
         $all_workouts = $this
             ->find()
-            ->select(['id', 'date', 'end_date', 'location_name', 'description', 'sport'])
+            ->select(['id', 'date', 'end_date', 'location_name', 'description', 'sport', 'contest_id'])
             ->order(array("date" => "DESC"))
             ->where(['member_id =' => $id]);
 

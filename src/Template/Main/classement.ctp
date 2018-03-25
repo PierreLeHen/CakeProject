@@ -1,4 +1,9 @@
-<?= $this->element('classement');?>
+  <?php
+    if ($this->Session->read('Auth.User')){
+    echo $this->element('classement');}
+else {
+        echo $this->element('classement_out');}
+    ?>
 <div><h2>Classement général</h2>
     <h3>Classer par :
         <?php
