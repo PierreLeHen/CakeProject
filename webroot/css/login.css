@@ -36,16 +36,19 @@ p{
 				color:#FFF;
 
 }
+
+#preform{margin-bottom: 30px;}
+
 article{
-	margin-top: 20vh;
+	margin-top: 10vh;
 }
+label {color: white;}
 
-
-.myform{
-margin-top: 40px;
+#gotoinscription{
+	display: block;
+	  text-decoration: underline;
 }
-
-.login{
+.login{margin-top: 10px;
 zoom: 1;
 filter: alpha(opacity=50);
 opacity: 1;
@@ -59,10 +62,10 @@ opacity: 1;
   font-weight:bold;
   padding: 10px 0px;
   color: #FFF;
-  width: 35% !important;
+  width: 71% !important;
 }
 #submit{
- margin-bottom: 125px;
+ margin-bottom: 12px;
  width: 71%;
  padding: 10px;
  font-style: normal;
