@@ -18,17 +18,15 @@
 
     <h2>Changer mon mot de passe</h2>
 
-     <?php
+    <?php
     // https://getbootstrap.com/docs/4.0/components/forms/
-    echo $this->Form->create($new);
+    echo $this->Form->create();
+    echo $this->Form->hidden('changepasswd', ['value' => 'changepasswd']);
     echo $this->Form->input("password", array("class" => "form-control", "placeholder" => "Nouveau mot de passe", "label" => "Mot de passe"));
-
-    echo $this->Form->submit("Valider le nouveau mot de passe", array("class" => "btn pagebtn float-right", "controller" => "Main", "action" => "changePassword/"));
-    echo $this->Form->end();
-    if (isset($error)) {
-        echo "$error";
-    } ?>
+    echo $this->Form->submit("Valider le nouveau mot de passe", array("class" => "btn pagebtn float-right"));
+    echo $this->Form->end(); ?>
 
 
 </div>
+
 

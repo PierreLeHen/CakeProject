@@ -27,47 +27,47 @@ class MembersTable extends Table
             ->select(['email']);
         return $all_members;
     }
-    
-    
+
+
 // In a table class
-public function buildRules(RulesChecker $rules)
-{
+    public function buildRules(RulesChecker $rules)
+    {
 // A single field.
-$rules->add($rules->isUnique(['email']));
+        $rules->add($rules->isUnique(['email']));
 
 // A list of fields
-$rules->add($rules->isUnique(
-    ['username', 'account_id'],
-    'This username & account_id combination has already been used.'
-));
-    return $rules;
-}
-      public function validationDefault(Validator $validator)
+        $rules->add($rules->isUnique(
+            ['username', 'account_id'],
+            'This username & account_id combination has already been used.'
+        ));
+        return $rules;
+    }
+    public function validationDefault(Validator $validator)
     {
-                $validator->add('password', 'length', ['rule' => ['lengthBetween', 6, 10,]]);
-           $validator -> sameAs('password_match','password','Passwords not equal.');
+        $validator->add('password', 'length', ['rule' => ['lengthBetween', 6, 10,]]);
+        $validator -> sameAs('password_match','password','Passwords not equal.');
         return $validator
             ->notEmpty('email', "Un email est nécessaire")
             ->notEmpty('password', 'Un mot de passe est nécessaire');
     }
-    
+
     public function add($array) {
         $value=0;
         $member= $this->newEntity();//crée un objet vide
-            $player= $this->patchEntity($member,$array);
-            if ($this->save($player)) {
-                $value=1;
-                return $value;
-            }else return $value ;
-        }
-    
+        $player= $this->patchEntity($member,$array);
+        if ($this->save($player)) {
+            $value=1;
+            return $value;
+        }else return $value ;
+    }
+
     public function changermdp($resultatFormulaire, $player)
     {
         $currentplayer = $this->get($player);
         $currentplayer->password = $resultatFormulaire['password'];
         $this->save($currentplayer); //sauvegarde du nouveau mdp
     }
-    
+
     public function imposermdp($mdp, $player)
     {
         $currentplayer = $this->get($player);
@@ -77,12 +77,11 @@ $rules->add($rules->isUnique(
 
     public function changePassword($member_id, $new_password)
     {
-
         $member_array=$this->findById($member_id)->toArray();
         $member= $member_array[0];
-        $newpassword= (new DefaultPasswordHasher)->hash($new_password);
+
         $member->password=$new_password;
         return $this->save($member);
     }
-    
+
 }
