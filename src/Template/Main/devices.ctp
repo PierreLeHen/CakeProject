@@ -1,4 +1,5 @@
 <?= $this->element('devices');?>
+<h1>Objets connectés</h1>
 <div>
     <h2>Objets autorisés</h2>
     <table>
