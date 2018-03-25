@@ -1,3 +1,4 @@
+<?= $this->element('earnings');?>
 <div><h2>Badges</h2>
     <h3>Classer par :
         <?php

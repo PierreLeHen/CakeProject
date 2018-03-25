@@ -13,7 +13,6 @@ use Cake\Routing\Router;
 use Cake\Filesystem\Folder;
 use Cake\Filesystem\File;
 
-
 class MainController extends AppController
 {
     public function initialize()
@@ -244,8 +243,9 @@ class MainController extends AppController
 
         $new = $this->Workouts->newEntity();
         if ($this->request->is("post")) {
-            $date = \Cake\I18n\Time::create($this->request->data['date']['year'], $this->request->data['date']['month'], $this->request->data['date']['day'], $this->request->data['date']['hour'], $this->request->data['date']['minute']);
-            $end_date = \Cake\I18n\Time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
+            $time = \Cake\I18n\Time::now('Europe/Paris');
+            $date = $time::create($this->request->data['date']['year'], $this->request->data['date']['month'], $this->request->data['date']['day'], $this->request->data['date']['hour'], $this->request->data['date']['minute']);
+            $end_date = $time::create($this->request->data['end_date']['year'], $this->request->data['end_date']['month'], $this->request->data['end_date']['day'], $this->request->data['end_date']['hour'], $this->request->data['end_date']['minute']);
             $lieu = $this->request->data("location_name");
             $member_id = $this->Auth->user('id');
 
@@ -314,9 +314,28 @@ class MainController extends AppController
         $this->redirect(['controller' => 'Main', 'action' => 'seances']);
     }
 
+    public function addEarning($workout_id, $log_id)
+    {
+        $this->loadModel("Earnings");
+        $this->loadModel("Logs");
+        $this->loadModel("Workouts");
+
+        $new = $this->Earnings->newEntity();
+
+            $log_value = $this->request->data('log_value');
+
+            $this->Logs->addLogs($log_type, $log_value, $workout_id, $member_id);
+
+            $this->set("new", $new);
+
+        $this->redirect(['controller' => 'Main', 'action' => 'seances']);
+    }
+
     public function badges()
     {
         $this->loadModel("Earnings");
+        $this->loadModel("Logs");
+        $this->loadModel("Workouts");
 
         $badge_type = "1ère séance enregistrée";
         $badges_array = $this->Earnings->getClass($badge_type);
