@@ -15,7 +15,7 @@ use Cake\I18n\Date;
 class WorkoutsTable extends Table
 {
 
-    public function addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id)
+    public function addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id, $contest_id)
     {
         $new = $this->newEntity();
         $new->date = $date;
@@ -24,6 +24,7 @@ class WorkoutsTable extends Table
         $new->description = $description;
         $new->sport = $sport;
         $new->member_id = $member_id;
+        $new->contest_id = $contest_id;
         $this->save($new);
     }
 
@@ -33,7 +34,7 @@ class WorkoutsTable extends Table
 
         $all_workouts = $this
             ->find()
-            ->select(['id', 'date', 'end_date', 'location_name', 'description', 'sport'])
+            ->select(['id', 'date', 'end_date', 'location_name', 'description', 'sport', 'contest_id'])
             ->order(array("date" => "DESC"))
             ->where(['member_id =' => $id]);
 

@@ -26,13 +26,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </title>
             <!-- Favicon -->
         <?= $this->Html->meta('icon') ?>
-        
+
             <!-- BootstrapJquery -->
         <?= $this->Html->css('bootstrap.min.css');?>
         <?= $this->Html->script('jquery.min.js');?>
         <?=  $this->Html->script('bootstrap.min.js');?>
+<<<<<<< HEAD
                 <?=  $this->Html->script('script.js');?>
         
+=======
+
+>>>>>>> f18147d23b3dc4928d350926a2a0467f7f1ef8eb
             <!-- Basic css et utils Cake-->
         <?= $this->Html->css('base.css') ?>
         <?= $this->Html->css('cake.css') ?>

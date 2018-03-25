@@ -47,8 +47,8 @@ class MainController extends AppController
         if ($this->request->is('post'))//si on a envoyé un formulaire
         {
             $ext = strtolower(pathinfo($this->request->data['user_img']['name'], PATHINFO_EXTENSION));
-            if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png'))) {
-                $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png)$');
+            if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png', 'gif'))) {
+                $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
                 if (!empty($files)) {
                     foreach ($files as $file) {
                         $file = new File($dos->pwd() . DS . $file);
@@ -57,21 +57,18 @@ class MainController extends AppController
                     }
                 }
                 move_uploaded_file($this->request->data['user_img']['tmp_name'], 'img/img_pp' . DS . $this->Auth->user("id") . '.' . $ext);
-            } else
-                {
+            } else {
                 $this->Flash->error(__("Modification impossible"));
             }
         }
-        $files = $dos->find($this->Auth->user("id").'\.(?:jpg|jpeg|png)$');
-        if(empty($files))
-        {
+        $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
+        if (empty($files)) {
             $user_img_ext = "none";
-        }
-        else{
+        } else {
             $user_img_ext = strtolower(pathinfo($files[0], PATHINFO_EXTENSION));
         }
-        $this->set("user_img_ext",$user_img_ext);
-            #$mail_array = $this->Members->getAllEmail();
+        $this->set("user_img_ext", $user_img_ext);
+        #$mail_array = $this->Members->getAllEmail();
         #$this->set("mail_array", $mail_array);
 
     }
@@ -80,7 +77,7 @@ class MainController extends AppController
     public function supprimerphotos()
     {
         $dos = new Folder(WWW_ROOT . 'img/img_pp');
-        $files = $dos->find($this->Auth->user("id").'\.(?:jpg|jpeg|png)$');
+        $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
         foreach ($files as $file) {
             $file = new File($dos->pwd() . DS . $file);
             $file->delete();
@@ -115,7 +112,10 @@ class MainController extends AppController
     public function SupprimerSeance($IDseance)
     {
         $this->loadModel("Workouts");
+        $this->loadModel("Logs");
+        $this->Logs->supprimerleslogs($IDseance);
         $this->Workouts->supprimerseance($IDseance);
+
         return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
     }
@@ -268,7 +268,8 @@ class MainController extends AppController
                 $sport = "Rameur";
 
             $description = $this->request->data('description');
-            $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id);
+            $contest_id = $this->request->data('contest');
+            $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id, $contest_id);
             $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
 
@@ -313,6 +314,40 @@ class MainController extends AppController
         $this->redirect(['controller' => 'Main', 'action' => 'seances']);
     }
 
+    public function badges()
+    {
+        $this->loadModel("Earnings");
+
+        $badge_type = "1ère séance enregistrée";
+        $badges_array = $this->Earnings->getClass($badge_type);
+
+        if ($this->request->is("post")) {
+            $member_id = $this->Auth->user('id');
+
+            if ($this->request->data('badges') == 0)
+                $badge_type = "1ère séance enregistrée";
+
+            if ($this->request->data('badges') == 1)
+                $badge_type = "5ème séance enregistrée";
+
+            if ($this->request->data('badges') == 2)
+                $badge_type = "1er match enregistré";
+
+            if ($this->request->data('badges') == 3)
+                $badge_type = "Abdos en béton";
+
+            if ($this->request->data('badges') == 4)
+                $badge_type = "Marathonien";
+
+
+            $badges_array = $this->Earnings->getClass($badge_type);
+            $this->set("badges_array", $badges_array);
+            $this->set("badge_type", $badge_type);
+        }
+        $this->set("badges_array", $badges_array);
+        $this->set("badge_type", $badge_type);
+    }
+
 
     public function newDevice($id_member, $id_device, $description)
     {
@@ -323,7 +358,7 @@ class MainController extends AppController
         return $this->redirect(['controller' => 'Main', 'action' => 'devices']);
     }
 
-    public function getParam($serial_device,$id_workout)
+    public function getParam($serial_device, $id_workout)
     {
 
         $this->loadModel("Devices");
@@ -331,20 +366,18 @@ class MainController extends AppController
         $this->viewBuilder()->className('Json');
         $getidmember = $this->Workouts->getMemberId($id_workout);
         $check = $this->Devices->checkAuthorization($serial_device, $getidmember);
-        if($check==1)
-        {
+        if ($check == 1) {
 
             $Param = $this->Workouts->getParametres($id_workout);
             $this->set(array(
-                'Param'=>$Param,'_serialize' =>array('Param')
+                'Param' => $Param, '_serialize' => array('Param')
 
 
             ));
 
 
         }
-        if($check==0)
-        {
+        if ($check == 0) {
 
 
         }
@@ -352,64 +385,84 @@ class MainController extends AppController
 
     }
 
-
-    /**
-     * Activate method
-     *
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    /*
-    public function mailCheck(){
-    $user = $this->Users->newEntity();
-    try {
-      if($this->request->is('post')) {
-        $uniquecode = substr(md5(microtime()),0,10); //generate random string
-        $randomKey = substr(md5(microtime()),0,10);
-            $this->request->data['otp'] = $uniquecode;
-            $getUserEmail = $this->Request->data['email'];
-
-            $user = $this->Users->patchEntity($user,$this->request->data);
-            if($this->Users->save($user)){
-              $bodyEmail = "You have successfully registered.";
-              $bodyEmail .= "To active account please click on below link";
-              $aLink = Router::url(array("controller"=>"users","action"=>"activate", $uniquecode, $randomKey),true);
-              $bodyEmail .= '<p><br><br><a style="width:50%;color:#fff;text-decoration:none;background:#333;display:block;padding:10px;text-align:center;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;margin:10px auto " href="'.$aLink.'"> Please verify your email address </a></p>';
-               if($this->Main->sendEmail(['to'=>$getUserEmail,'subject'=>'Registration Complete','title'=>'Registration Complete','body'=>$bodyEmail]))
-               {
-                  $this->Flash->success(__('Your account has been registered. please check your email address to activate your account'));
-              return $this->redirect(['action' => 'mailCheck']);
-                }else{
-                  $this->Flash->error(__('Registration not completed. Please try again.'));
-                  return $this->redirect(['action' => 'index']);
-                }
-            }else{
-              $this->Flash->error(__('Unable to register your account.'));
-            }
-       }
-    }catch (\Exception $e) {
-       $this->Flash->error($e->getMessage());
-       return $this->redirect(['action' => 'mailCheck']);
-    }
-    $this->set('user',$user);
-    $this->set('page_title',__('Registeration'));
-    }
-                            ///Acrivation via le mail
-    public function activate($getUniCode='', $randomKey='')
+    public function IncLogVal($serial_device,$id_workout,$id_member,$log_type,$log_value)
     {
-       if(trim($getUniCode)!="" && $randomKey!="") {
-         $getUniCode = filter_var($getUniCode, FILTER_SANITIZE_STRING);
-         $getUser = $this->Users->find('all',['conditions'=> ['otp'=> $getUniCode,'status'=> 0]])->first();
-         if($getUser) {
-           $getUserId = $getUser->id;
-           $updateActivate  = $this->Users->updateAll(['status'=> 1, 'otp'=> ''], ['id'=> $getUserId]);
-           $this->Flash->success(__('Your account has been Activated successfully. please login'));
-           return $this->redirect(['action' => 'mailCheck']);
-         }
-       }
+
+        $this->loadModel("Devices");
+
+        $this->loadModel("Logs");
+
+        $check = $this->Devices->checkAuthorization($serial_device, $id_member);
+
+        if ($check == 1) {
+
+            $logid=$this->Logs->getlogid($id_member,$log_type,$id_workout,$log_value);
+            $this->Logs->changelogvalue($logid,$log_value);
+            return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
+
+        }
+
 
     }
-    */
+
+
+/**
+ * Activate method
+ *
+ * @return \Cake\Network\Response|null
+ * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+ */
+/*
+public function mailCheck(){
+$user = $this->Users->newEntity();
+try {
+  if($this->request->is('post')) {
+    $uniquecode = substr(md5(microtime()),0,10); //generate random string
+    $randomKey = substr(md5(microtime()),0,10);
+        $this->request->data['otp'] = $uniquecode;
+        $getUserEmail = $this->Request->data['email'];
+
+        $user = $this->Users->patchEntity($user,$this->request->data);
+        if($this->Users->save($user)){
+          $bodyEmail = "You have successfully registered.";
+          $bodyEmail .= "To active account please click on below link";
+          $aLink = Router::url(array("controller"=>"users","action"=>"activate", $uniquecode, $randomKey),true);
+          $bodyEmail .= '<p><br><br><a style="width:50%;color:#fff;text-decoration:none;background:#333;display:block;padding:10px;text-align:center;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;margin:10px auto " href="'.$aLink.'"> Please verify your email address </a></p>';
+           if($this->Main->sendEmail(['to'=>$getUserEmail,'subject'=>'Registration Complete','title'=>'Registration Complete','body'=>$bodyEmail]))
+           {
+              $this->Flash->success(__('Your account has been registered. please check your email address to activate your account'));
+          return $this->redirect(['action' => 'mailCheck']);
+            }else{
+              $this->Flash->error(__('Registration not completed. Please try again.'));
+              return $this->redirect(['action' => 'index']);
+            }
+        }else{
+          $this->Flash->error(__('Unable to register your account.'));
+        }
+   }
+}catch (\Exception $e) {
+   $this->Flash->error($e->getMessage());
+   return $this->redirect(['action' => 'mailCheck']);
+}
+$this->set('user',$user);
+$this->set('page_title',__('Registeration'));
+}
+                        ///Acrivation via le mail
+public function activate($getUniCode='', $randomKey='')
+{
+   if(trim($getUniCode)!="" && $randomKey!="") {
+     $getUniCode = filter_var($getUniCode, FILTER_SANITIZE_STRING);
+     $getUser = $this->Users->find('all',['conditions'=> ['otp'=> $getUniCode,'status'=> 0]])->first();
+     if($getUser) {
+       $getUserId = $getUser->id;
+       $updateActivate  = $this->Users->updateAll(['status'=> 1, 'otp'=> ''], ['id'=> $getUserId]);
+       $this->Flash->success(__('Your account has been Activated successfully. please login'));
+       return $this->redirect(['action' => 'mailCheck']);
+     }
+   }
+
+}
+*/
 }
 
 
