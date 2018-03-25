@@ -405,6 +405,19 @@ class MainController extends AppController
 
     }
 
+    public function changePassword()
+    {
+
+        $this->loadModel("Members");
+        if ($this->request->is("post")) {
+            $member_id = $this->Auth->user('id');
+            $new_password = $this->request->data('password');
+
+
+            $this->Members->changePasseword($member_id, $new_password);
+        }
+    }
+
 
 /**
  * Activate method
