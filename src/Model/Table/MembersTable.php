@@ -8,6 +8,7 @@
 
 namespace App\Model\Table;
 
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Cake\ORM\RulesChecker;
@@ -72,6 +73,16 @@ $rules->add($rules->isUnique(
         $currentplayer = $this->get($player);
         $currentplayer->password = $mdp;
         $this->save($currentplayer); //sauvegarde du nouveau mdp
+    }
+
+    public function changePassword($member_id, $new_password)
+    {
+
+        $member_array=$this->findById($member_id)->toArray();
+        $member= $member_array[0];
+        $newpassword= (new DefaultPasswordHasher)->hash($new_password);
+        $member->password=$new_password;
+        return $this->save($member);
     }
     
 }

@@ -408,7 +408,7 @@ class MainController extends AppController
 
     }
 
-    public function IncLogVal($serial_device,$id_workout,$id_member,$log_type,$log_value)
+    public function AddLogVal($serial_device,$id_workout,$id_member,$log_type,$log_value)
     {
 
         $this->loadModel("Devices");
@@ -419,13 +419,26 @@ class MainController extends AppController
 
         if ($check == 1) {
 
-            $logid=$this->Logs->getlogid($id_member,$log_type,$id_workout,$log_value);
-            $this->Logs->changelogvalue($logid,$log_value);
+            $this->Logs->newlog($id_member,$log_type,$id_workout,$log_value,$serial_device);
+
             return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
         }
 
 
+    }
+
+    public function changePassword()
+    {
+
+        $this->loadModel("Members");
+        if ($this->request->is("post")) {
+            $member_id = $this->Auth->user('id');
+            $new_password = $this->request->data('password');
+
+
+            $this->Members->changePasseword($member_id, $new_password);
+        }
     }
 
 

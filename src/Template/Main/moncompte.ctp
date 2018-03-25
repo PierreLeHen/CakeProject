@@ -15,5 +15,20 @@
     echo $this->Form->end();
     echo $this->Form->postButton("Supprimer", ["controller" => "Main", "action" => "supprimerphotos/"]);
     ?>
+
+    <h2>Changer mon mot de passe</h2>
+
+     <?php
+    // https://getbootstrap.com/docs/4.0/components/forms/
+    echo $this->Form->create($new);
+    echo $this->Form->input("password", array("class" => "form-control", "placeholder" => "Nouveau mot de passe", "label" => "Mot de passe"));
+
+    echo $this->Form->submit("Valider le nouveau mot de passe", array("class" => "btn pagebtn float-right", "controller" => "Main", "action" => "changePassword/"));
+    echo $this->Form->end();
+    if (isset($error)) {
+        echo "$error";
+    } ?>
+
+
 </div>
 

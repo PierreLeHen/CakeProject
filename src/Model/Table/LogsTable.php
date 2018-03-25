@@ -18,7 +18,7 @@ class LogsTable extends Table
     public function addLogs($log_type, $log_value, $workout_id, $member_id)
     {
         $new = $this->newEntity();
-        $new->date = Time::now();
+        $new->date = Time::now('Europe/Paris');
         $new->location_latitude = 0;
         $new->location_logitude = 0;
         $new->log_type = $log_type;
@@ -77,26 +77,22 @@ class LogsTable extends Table
 
     }
 
-    public function getlogid($id_member,$log_type,$id_workout)
+    public function newlog($id_member,$log_type,$id_workout,$log_value,$serial_device)
     {
 
-        $log = $this->find();
-        $log->select(['id'])
-            ->where(['member_id =' => $id_member,'log_type =' => $log_type, 'workout_id = '=>$id_workout])->first();
-
-        return $log;
+        $new = $this->newEntity();
+        $new->date = Time::now('Europe/Paris');
+        $new->location_latitude = 0;
+        $new->location_logitude = 0;
+        $new->log_type = $log_type;
+        $new->log_value = $log_value;
+        $new->device_id = $serial_device;
+        $new->workout_id = $id_workout;
+        $new->member_id = $id_member;
+        $this->save($new);
     }
 
-    public function changelogvalue($logid,$log_value)
 
-    {
-
-        $logtochange_array= $this->findById($logid)->toArray();
-        $logtochange=$logtochange_array[0];
-       $logtochange->log_value += $log_value;
-        return $this->save($logtochange);
-
-    }
 
 
 }

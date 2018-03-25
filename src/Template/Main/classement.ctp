@@ -4,7 +4,7 @@
 else {
         echo $this->element('classement_out');}
     ?>
-<div><h2>Classement général</h2>
+<div><h1>Classement général</h1>
     <h3>Classer par :
         <?php
         echo $this->Form->create(null);

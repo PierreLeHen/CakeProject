@@ -36,9 +36,16 @@ $cakeDescription = 'CAP SPORTS';
         <?= $this->Html->css('bootstrap.min.css');?>
         <?= $this->Html->script('jquery.min.js');?>
         <?=  $this->Html->script('bootstrap.min.js');?>
+<<<<<<< HEAD
         <?=  $this->Html->script('script.js');?>
 
         <!-- Basic css et utils Cake-->
+=======
+
+        <?=  $this->Html->script('script.js');?>
+
+            <!-- Basic css et utils Cake-->
+>>>>>>> a2c247ab477e6038bacdaf0cede6b3c81a37abd3
         <?= $this->Html->css('base.css') ?>
         <?= $this->Html->css('cake.css') ?>
         <?= $this->fetch('meta') ?>
@@ -57,7 +64,7 @@ $cakeDescription = 'CAP SPORTS';
             <?=$this->html->link("Faq",["controller" => "pages","action" => "faq"])?>
             <?=$this->html->link("Mentions légales",["controller" => "pages","action" => "mentions"])?>
         </p>
-        <p>Démogé - Juin de Faucal - Lehen - Marchand, options B et G</p>
+        <p>Démogé - Juin de Faucal - Lehen - Marchand, options B et G - <a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p>
 
     </footer>
     </body>
