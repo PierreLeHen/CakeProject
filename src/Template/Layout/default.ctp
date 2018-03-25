@@ -54,7 +54,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?=$this->html->link("Faq",["controller" => "pages","action" => "faq"])?>
             <?=$this->html->link("Mentions légales",["controller" => "pages","action" => "mentions"])?>
         </p>
-        <p>Démogé - Juin de Faucal - Lehen - Marchand, options B et G</p>
+        <p>Démogé - Juin de Faucal - Lehen - Marchand, options B et G - <a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p>
 
     </footer>
     </body>
