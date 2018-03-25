@@ -40,15 +40,14 @@ p{
 #preform{margin-bottom: 30px;}
 
 article{
-	margin-top: 10vh;
-}
+	margin-top: 10vh;}
 label {color: white;}
 
 #gotoinscription{
-	display: block;
+	display: block;	
 	  text-decoration: underline;
 }
-.login{margin-top: 10px;
+.login{
 zoom: 1;
 filter: alpha(opacity=50);
 opacity: 1;
@@ -76,13 +75,11 @@ opacity: 1;
  color: #FFF;
  border: 5px solid  #FFF;;
  background-color: hsla(0,0%,100%,0.00);
-
  transition: all 0.3s ease-in-out;
 }
 #submit:hover
 {
-  background: #FFF;
-
+  background: #FFF;!important
   color: #333;
 
 }

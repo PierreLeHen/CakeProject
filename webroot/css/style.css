@@ -1,0 +1,64 @@
+/*__________________________________________________________________________________________________________________*/
+/*Feuille de style utilisée de facon récurrente pour toutes les pages*/
+
+button{
+ padding: 7px!important;
+font-weight: 300!important;
+ text-decoration:none;
+ font-weight:bold!important;
+ font-family:"Proxima Nova";
+ color: #8c8c60!important;
+ border: 3px solid  #8c8c60!important;
+ background-color: hsla(0,0%,100%,0.00)!important;
+ transition: all 0.3s ease-in-out;
+}
+button:hover
+{
+  background:#8c8c60!important;
+  color: #FFF!important;
+}
+
+#ligne_login
+/*c'est la ligne sous le classement*/
+{
+    height: 8px;
+    width: 60px;
+    background-color: #ffffff;
+        margin-bottom: 45px;
+        margin-left: 0px;
+        padding: 0px!important;
+
+}
+
+footer{   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;}
+
+footer a
+{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    margin: 0px!important;
+      color: #8c8c60!important;
+
+}
+footer p
+{
+    font-size: 20px!important;
+    text-align: center!important;
+    margin-top: 20px;
+    color: #BBB!important
+}
+span.frame {
+    border: 2px solid #fff;
+     padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+
+/*______________________
