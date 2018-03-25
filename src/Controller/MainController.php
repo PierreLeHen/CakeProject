@@ -44,21 +44,39 @@ class MainController extends AppController
         $this->set('mail', $mail_user);
         $this->set('img', $user_id);
         $dos = new Folder(WWW_ROOT . 'img/img_pp');
+
         if ($this->request->is('post'))//si on a envoyé un formulaire
         {
-            $ext = strtolower(pathinfo($this->request->data['user_img']['name'], PATHINFO_EXTENSION));
-            if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png', 'gif'))) {
-                $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
-                if (!empty($files)) {
-                    foreach ($files as $file) {
-                        $file = new File($dos->pwd() . DS . $file);
-                        $file->delete();
-                        $file->close();
-                    }
+            if(isset($this->request->data['changepasswd']))
+            {
+                $new_password = $this->request->data('password');
+                if($this->Members->changePassword($user_id, $new_password))
+                {
+                    $this->Flash->success(__('Password changed successfully !'));
+                    return $this->redirect(['action' => 'moncompte']);
                 }
-                move_uploaded_file($this->request->data['user_img']['tmp_name'], 'img/img_pp' . DS . $this->Auth->user("id") . '.' . $ext);
-            } else {
-                $this->Flash->error(__("Modification impossible"));
+                else
+                {
+                    $this->Flash->error(__('Impossible to change the password !'));
+                }
+            }
+            else
+            {
+                $ext = strtolower(pathinfo($this->request->data['user_img']['name'], PATHINFO_EXTENSION));
+                if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png', 'gif'))) {
+                    $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
+                    if (!empty($files)) {
+                        foreach ($files as $file) {
+                            $file = new File($dos->pwd() . DS . $file);
+                            $file->delete();
+                            $file->close();
+                            $this->Flash->success(__("Picture changed successfully"));
+                        }
+                    }
+                    move_uploaded_file($this->request->data['user_img']['tmp_name'], 'img/img_pp' . DS . $this->Auth->user("id") . '.' . $ext);
+                } else {
+                    $this->Flash->error(__('Impossible to change the picture !'));
+                }
             }
         }
         $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
@@ -405,77 +423,65 @@ class MainController extends AppController
 
     }
 
-    public function changePassword()
-    {
-
-        $this->loadModel("Members");
-        if ($this->request->is("post")) {
-            $member_id = $this->Auth->user('id');
-            $new_password = $this->request->data('password');
 
 
-            $this->Members->changePasseword($member_id, $new_password);
-        }
-    }
+    /**
+     * Activate method
+     *
+     * @return \Cake\Network\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    /*
+    public function mailCheck(){
+    $user = $this->Users->newEntity();
+    try {
+      if($this->request->is('post')) {
+        $uniquecode = substr(md5(microtime()),0,10); //generate random string
+        $randomKey = substr(md5(microtime()),0,10);
+            $this->request->data['otp'] = $uniquecode;
+            $getUserEmail = $this->Request->data['email'];
 
-
-/**
- * Activate method
- *
- * @return \Cake\Network\Response|null
- * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
- */
-/*
-public function mailCheck(){
-$user = $this->Users->newEntity();
-try {
-  if($this->request->is('post')) {
-    $uniquecode = substr(md5(microtime()),0,10); //generate random string
-    $randomKey = substr(md5(microtime()),0,10);
-        $this->request->data['otp'] = $uniquecode;
-        $getUserEmail = $this->Request->data['email'];
-
-        $user = $this->Users->patchEntity($user,$this->request->data);
-        if($this->Users->save($user)){
-          $bodyEmail = "You have successfully registered.";
-          $bodyEmail .= "To active account please click on below link";
-          $aLink = Router::url(array("controller"=>"users","action"=>"activate", $uniquecode, $randomKey),true);
-          $bodyEmail .= '<p><br><br><a style="width:50%;color:#fff;text-decoration:none;background:#333;display:block;padding:10px;text-align:center;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;margin:10px auto " href="'.$aLink.'"> Please verify your email address </a></p>';
-           if($this->Main->sendEmail(['to'=>$getUserEmail,'subject'=>'Registration Complete','title'=>'Registration Complete','body'=>$bodyEmail]))
-           {
-              $this->Flash->success(__('Your account has been registered. please check your email address to activate your account'));
-          return $this->redirect(['action' => 'mailCheck']);
+            $user = $this->Users->patchEntity($user,$this->request->data);
+            if($this->Users->save($user)){
+              $bodyEmail = "You have successfully registered.";
+              $bodyEmail .= "To active account please click on below link";
+              $aLink = Router::url(array("controller"=>"users","action"=>"activate", $uniquecode, $randomKey),true);
+              $bodyEmail .= '<p><br><br><a style="width:50%;color:#fff;text-decoration:none;background:#333;display:block;padding:10px;text-align:center;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;margin:10px auto " href="'.$aLink.'"> Please verify your email address </a></p>';
+               if($this->Main->sendEmail(['to'=>$getUserEmail,'subject'=>'Registration Complete','title'=>'Registration Complete','body'=>$bodyEmail]))
+               {
+                  $this->Flash->success(__('Your account has been registered. please check your email address to activate your account'));
+              return $this->redirect(['action' => 'mailCheck']);
+                }else{
+                  $this->Flash->error(__('Registration not completed. Please try again.'));
+                  return $this->redirect(['action' => 'index']);
+                }
             }else{
-              $this->Flash->error(__('Registration not completed. Please try again.'));
-              return $this->redirect(['action' => 'index']);
+              $this->Flash->error(__('Unable to register your account.'));
             }
-        }else{
-          $this->Flash->error(__('Unable to register your account.'));
-        }
-   }
-}catch (\Exception $e) {
-   $this->Flash->error($e->getMessage());
-   return $this->redirect(['action' => 'mailCheck']);
-}
-$this->set('user',$user);
-$this->set('page_title',__('Registeration'));
-}
-                        ///Acrivation via le mail
-public function activate($getUniCode='', $randomKey='')
-{
-   if(trim($getUniCode)!="" && $randomKey!="") {
-     $getUniCode = filter_var($getUniCode, FILTER_SANITIZE_STRING);
-     $getUser = $this->Users->find('all',['conditions'=> ['otp'=> $getUniCode,'status'=> 0]])->first();
-     if($getUser) {
-       $getUserId = $getUser->id;
-       $updateActivate  = $this->Users->updateAll(['status'=> 1, 'otp'=> ''], ['id'=> $getUserId]);
-       $this->Flash->success(__('Your account has been Activated successfully. please login'));
+       }
+    }catch (\Exception $e) {
+       $this->Flash->error($e->getMessage());
        return $this->redirect(['action' => 'mailCheck']);
-     }
-   }
+    }
+    $this->set('user',$user);
+    $this->set('page_title',__('Registeration'));
+    }
+                            ///Acrivation via le mail
+    public function activate($getUniCode='', $randomKey='')
+    {
+       if(trim($getUniCode)!="" && $randomKey!="") {
+         $getUniCode = filter_var($getUniCode, FILTER_SANITIZE_STRING);
+         $getUser = $this->Users->find('all',['conditions'=> ['otp'=> $getUniCode,'status'=> 0]])->first();
+         if($getUser) {
+           $getUserId = $getUser->id;
+           $updateActivate  = $this->Users->updateAll(['status'=> 1, 'otp'=> ''], ['id'=> $getUserId]);
+           $this->Flash->success(__('Your account has been Activated successfully. please login'));
+           return $this->redirect(['action' => 'mailCheck']);
+         }
+       }
 
-}
-*/
+    }
+    */
 }
 
 
