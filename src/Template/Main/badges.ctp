@@ -1,5 +1,6 @@
 <section id="bloco" class="col-md-8 col-lg-6 col-sm-10 col-xs-10  ">
 <div><h1>Badges</h1>
+    <figure id="ligne"></figure>
     <h3>Trier par :
         <?php
         echo $this->Form->create(null);

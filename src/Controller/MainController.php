@@ -307,8 +307,14 @@ class MainController extends AppController
 
             $description = $this->request->data('description');
             $contest_id = $this->request->data('contest');
-            $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id, $contest_id);
-            $this->badges();
+            if($end_date>=$date)
+            {
+                $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id, $contest_id);
+                $this->addEarning();
+            }else {
+                $this->Flash->error(__('La date de fin doit être supérieure à la date de début'));
+            }
+
 
             $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
@@ -347,7 +353,13 @@ class MainController extends AppController
 
             $log_value = $this->request->data('log_value');
 
-            $this->Logs->addLogs($log_type, $log_value, $workout_id, $member_id);
+            if($log_value != NULL)
+            {
+                $this->Logs->addLogs($log_type, $log_value, $workout_id, $member_id);
+                $this->addEarning();
+            }else{
+                $this->Flash->error(__('Veuillez saisir une valeur pour le log'));
+            }
 
             $this->set("new", $new);
         }
@@ -368,22 +380,29 @@ class MainController extends AppController
         foreach ($list_members as $member) {
 
             $count = $this->Workouts->getNumberWorkouts($member->member_id);
-            $countlog = $this->Logs->getNumberLogs($member->member_id);
+            $countcont = $this->Workouts->getNumberContests($member->member_id);
+            $countabs = $this->Logs->getNumberAbs($member->member_id);
+            /*$countpas = $this->Logs->getNumberPas($member->member_id);*/
 
-            if($count<5 && $count>0)
+            if($count>0)
             {
                 $this->Earnings->setBadge($member->member_id, "badge1");
-                echo("coucou1"); echo($count);
             }
             if($count>4)
             {
                 $this->Earnings->setBadge($member->member_id, "badge2");
-                echo("coucou2"); echo($count);
             }
-            if($countlog>0)
+            if($countcont>0)
             {
                 $this->Earnings->setBadge($member->member_id, "badge3");
-                echo("coucou3"); echo($countlog);
+            }
+            if($countabs>=1000)
+            {
+                $this->Earnings->setBadge($member->member_id, "badge4");
+            }
+            if($countpas>=42000)
+            {
+                $this->Earnings->setBadge($member->member_id, "badge5");
             }
         }
 

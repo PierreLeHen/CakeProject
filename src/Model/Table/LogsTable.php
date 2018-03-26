@@ -92,27 +92,13 @@ class LogsTable extends Table
         $this->save($new);
     }
 
-    public function getNumberLogs($members_table)
-    {
-
-        $query = $this
-            ->find()
-            ->where(['member_id =' => $members_table])->toArray();
-        $number = count($query);
-
-        return $number;
-
-    }
-
     public function getNumberAbs($members_table)
     {
-
         $query = $this
-            ->find()
-            ->where(['member_id =' => $members_table])->toArray();
-        $number = count($query);
-
-        return $number;
+            ->find();
+        $query->select(['log_value' => $query->func()->SUM('log_value')])
+            ->where(['log_type =' => "Abdos", 'member_id =' => $members_table])->toArray();
+        return $query;
 
     }
 

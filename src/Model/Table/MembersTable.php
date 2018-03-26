@@ -91,7 +91,7 @@ class MembersTable extends Table
             ->find()
             ->select(['email'])
             ->order(array("date" => "DESC"))
-            ->where(['member_id =' => $id]);
+            ->where(['member_id =' => $member_id]);
 
         return $mail;
     }

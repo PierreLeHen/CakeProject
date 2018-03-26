@@ -106,6 +106,17 @@ class WorkoutsTable extends Table
         return $number;
 
     }
+    public function getNumberContests($members_table)
+    {
+
+        $query = $this
+            ->find()
+            ->where(['member_id ='  => $members_table, 'contest_id =' => "1"])->toArray();
+        $number = count($query);
+
+        return $number;
+
+    }
 
 
 
