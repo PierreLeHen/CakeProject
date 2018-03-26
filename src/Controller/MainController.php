@@ -382,6 +382,7 @@ class MainController extends AppController
 
             $count = $this->Workouts->getNumberWorkouts($member->member_id);
             $countcont = $this->Workouts->getNumberContests($member->member_id);
+            $countlog = $this->Logs->getNumberLogs($member->member_id);
             $countabs = $this->Logs->getNumberAbs($member->member_id);
             /*$countpas = $this->Logs->getNumberPas($member->member_id);*/
 
@@ -393,9 +394,18 @@ class MainController extends AppController
             {
                 $this->Earnings->setBadge($member->member_id, "badge2");
             }
+
             if($countcont>0)
             {
                 $this->Earnings->setBadge($member->member_id, "badge3");
+            }
+            if($countlog>0)
+            {
+                $this->Earnings->setBadge($member->member_id, "badge4");
+            }
+            if($countlog>4)
+            {
+                $this->Earnings->setBadge($member->member_id, "badge5");
             }
             if($countabs>=1000)
             {

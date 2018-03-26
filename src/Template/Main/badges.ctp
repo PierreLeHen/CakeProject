@@ -4,7 +4,7 @@
     <h3>Trier par :
         <?php
         echo $this->Form->create(null);
-        echo $this->Form->select('badges', ["1ère séance enregistrée", "5ème séance enregistrée", "1er match enregistré", "Abdos en béton", "Marathonien"], ['multiple' => false]);
+        echo $this->Form->select('badges', ["1ère séance enregistrée", "5ème séance enregistrée", "1er match enregistré", "Relevé en chef !", "Super Sportif !"], ['multiple' => false]);
         echo $this->Form->submit("Trier", array("class" => "btn pagebtn float-right"));
         echo $this->Form->end();
         ?>
@@ -27,12 +27,12 @@
     if($badge == 4)
     {
         echo $this->Html->image('award/ribon1.png', array('width' => '50px'));
-        echo "<p>Abdos en béton</p><p>Ce badge s'obtient en réalisant 1000 abdominaux !</p>";
+        echo "<p>Relevé en chef !</p><p>Ce badge s'obtient en réalisant en enregistrant un relevé !</p>";
     }
     if($badge == 5)
     {
         echo $this->Html->image('award/ribon2.png', array('width' => '50px'));
-        echo "<p>Marathonien</p><p>Ce badge s'obtient en réalisant 42000 pas !</p>";
+        echo "<p>Super Sportif !</p><p>Ce badge s'obtient en enregistrant 5 relevés !</p>";
     }?>
     <table>
         <tr>
