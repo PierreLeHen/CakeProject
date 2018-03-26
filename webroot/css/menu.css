@@ -1,0 +1,131 @@
+
+nav{
+	/*le contenant des icones à droite*/
+	position: fixed;
+	z-index: 10;
+	top: 67px;
+	left: 2%	;
+	padding:0px;
+	width: 60px;
+}
+
+.current{
+	/*ce sont les icones de nav*/
+	margin: 10px;
+	padding: 35px;
+	background-color: #8E8E62;
+	display: inline-block;
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32); 
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32);
+	/*meme si il n'y a pas d'image de background encore defini je fais ça pour evite de le copier dans tout les cas d'icone*/
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: center; 
+	/*fin de la partie background-image */
+	transition: box-shadow 0.25s ease-in-out;
+}
+
+.icone{
+	/*ce sont les icones de nav*/
+	margin: 10px;
+	padding: 35px;
+	background-color: #FFF;
+	display: inline-block;
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32); 
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32);
+	/*meme si il n'y a pas d'image de background encore defini je fais ça pour evite de le copier dans tout les cas d'icone*/
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: center; 
+	/*fin de la partie background-image */
+	transition: box-shadow 0.25s ease-in-out;
+
+}
+.icone:hover{
+	box-shadow: 0px 0px 20px 0px  rgba(177,194,109,1)
+
+}
+
+#home{
+	/*icone retour*/
+	background-image: 	url("../img/home.png");
+}
+#seance
+{
+	background-image: 	url("../img/run.png");
+
+}
+#iot
+{
+	background-image: 	url("../img/iot.png");
+
+}
+#profil
+{
+	background-image: 	url("../img/profil.png");
+
+}
+#current_home{
+	/*icone retour*/
+	background-image: 	url("../img/home2.png");
+}
+#current_seance
+{
+	background-image: 	url("../img/run2.png");
+}
+#current_iot
+{
+	background-image: 	url("../img/iot2.png");
+}
+#current_profil
+{
+	background-image: 	url("../img/profil2.png");
+
+}
+#current_classement
+{
+	background-image: 	url("../img/classement2.png");
+
+}
+#classement
+{
+	background-image: 	url("../img/classement.png");
+
+}
+
+#run
+{
+	background-image: 	url("../img/run.png");
+
+}
+#current_run
+{
+	background-image: 	url("../img/run2.png");
+
+}
+#current_home
+{
+	background-image: 	url("../img/home2.png");
+
+}
+#home
+{
+	background-image: 	url("../img/home.png");
+
+}
+#badge
+{
+	background-image: 	url("../img/badge.png");
+
+}
+#current_badge
+{
+	background-image: 	url("../img/badge2.png");
+
+}

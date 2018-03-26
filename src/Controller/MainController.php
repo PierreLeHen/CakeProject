@@ -173,8 +173,31 @@ class MainController extends AppController
             $this->Flash->error(__('Unable to add the user.'));
         }
         $this->set('user', $user);
-    }
+        
+        
+        
+        
+        
+         if($user->errors()){
+                $error_msg = [];
+                foreach( $user->errors() as $errors){
+                    if(is_array($errors)){
+                        foreach($errors as $error){
+                            $error_msg[]    =   $error;
+                        }
+                    }else{
+                        $error_msg[]    =   $errors;
+                    }
+                }
 
+                if(!empty($error_msg)){
+                    $this->Flash->error(
+                        __("Please fix the following error(s):".implode("\n \r", $error_msg))
+                    );
+                }
+       
+    }
+    }
     ///Deconnexion
     public function logout()
     {

@@ -1,5 +1,5 @@
 <?php
-echo $this->Html->css('home');?>
+echo $this->Html->css('menu');?>
 <nav>
  <!-- barre de navigation à droite -->
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'logout'), ['class'=>'icone','id'=>'home','data-toggle'=>'tooltip','title'=>'Deconnexion']); ?>

@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'CAP SPORTS';
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,20 +24,23 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?= $cakeDescription ?>:
             <?= $this->fetch('title') ?>
         </title>
-            <!-- Favicon -->
-        <?= $this->Html->meta('icon') ?>
+        <!-- Favicon -->
+      <?= $this->Html->meta(
+    'favicon.ico',
+    '/favicon.ico',
+    ['type' => 'icon']
+);
+?>
 
-            <!-- BootstrapJquery -->
+        <!-- BootstrapJquery -->
         <?= $this->Html->css('bootstrap.min.css');?>
         <?= $this->Html->script('jquery.min.js');?>
         <?=  $this->Html->script('bootstrap.min.js');?>
 
-        <?=  $this->Html->script('script.js');?>
-
-            <!-- Basic css et utils Cake-->
+        <!-- Basic css et utils Cake-->
         <?= $this->Html->css('base.css') ?>
+        <?= $this->Html->css('style.css') ?>
         <?= $this->Html->css('cake.css') ?>
-         <?= $this->Html->css('cake.css') ?>
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
         <?= $this->fetch('script') ?>
@@ -54,8 +57,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?=$this->html->link("Faq",["controller" => "pages","action" => "faq"])?>
             <?=$this->html->link("Mentions légales",["controller" => "pages","action" => "mentions"])?>
         </p>
-        <p>Démogé - Juin de Faucal - Lehen - Marchand, options B et G - <a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p>
-
+        <p><span class="frame">Démogé - Juin de Faucal - Lehen - Marchand, options B et G -</span> <a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p>
     </footer>
     </body>
 </html>

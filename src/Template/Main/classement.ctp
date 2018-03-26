@@ -23,8 +23,6 @@ else {
 
 
         <?php $cnt = 1; ?>
-
-
         <?php foreach ($classement_array as $row) {
 
             echo "<tr><td>" . $cnt . "</td><td>" . $row['member_id'] . "</td><td>" . $row['log_value'] . "</td></tr>";
