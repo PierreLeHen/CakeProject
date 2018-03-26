@@ -97,7 +97,8 @@ class LogsTable extends Table
         $query = $this
             ->find();
         $query->select(['log_value' => $query->func()->SUM('log_value')])
-            ->where(['log_type =' => "Abdos", 'member_id =' => $members_table])->toArray();
+            ->where(['log_type =' => "Abdos", 'member_id =' => $members_table]);
+
         return $query;
 
     }

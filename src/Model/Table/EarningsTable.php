@@ -18,7 +18,6 @@ class EarningsTable extends Table
     public function setBadge($memberID, $badge)
     {
 
-
         $new = $this->newEntity();
         $new->date = Time::now('Europe/Paris');
         $new->member_id = $memberID;
@@ -32,19 +31,25 @@ class EarningsTable extends Table
 
             $new->sticker_id = 2;
         }
+
         if ($badge == "badge3") {
 
             $new->sticker_id = 3;
         }
+
         if ($badge == "badge4") {
 
             $new->sticker_id = 4;
         }
+
+
         if ($badge == "badge5") {
 
             $new->sticker_id = 5;
         }
         $this->save($new);
+
+
     }
 
     public function getAllBadges()
@@ -61,7 +66,7 @@ class EarningsTable extends Table
     {
 
         $badges = $this->find();
-        $badges->select(['member_id','sticker_id'])
+        $badges->select(['member_id', 'sticker_id'])
             ->group('member_id')
             ->where(['sticker_id =' => $badge]);
 

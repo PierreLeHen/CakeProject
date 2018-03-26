@@ -327,6 +327,7 @@ class MainController extends AppController
     public function addLog($workout_id)
     {
         $this->loadModel("Logs");
+        $this->loadModel("Earnings");
 
         $new = $this->Logs->newEntity();
         if ($this->request->is("post")) {
@@ -400,10 +401,10 @@ class MainController extends AppController
             {
                 $this->Earnings->setBadge($member->member_id, "badge4");
             }
-            if($countpas>=42000)
+            /*if($countpas>=42000)
             {
                 $this->Earnings->setBadge($member->member_id, "badge5");
-            }
+            }*/
         }
 
     }
