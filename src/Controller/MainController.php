@@ -353,65 +353,74 @@ class MainController extends AppController
 
     public function addEarning()
     {
-
-
-    }
-
-    public function badges()
-    {
-
         $this->loadModel("Earnings");
         $this->loadModel("Logs");
         $this->loadModel("Workouts");
-
 
         $count_list = [];
 
         $list_members = $this->Workouts->getMembers();
         $this->set("members_array", $list_members);
 
-
-
-
         foreach ($list_members as $member) {
 
             $count = $this->Workouts->getNumberWorkouts($member->member_id);
-
-
+            $countlog = $this->Logs->getNumberLogs($member->member_id);
 
             if($count<5 && $count>0)
             {
-
                 $this->Earnings->setBadge($member->member_id, "badge1");
                 echo("coucou1"); echo($count);
-
-
             }
             if($count>4)
             {
-
                 $this->Earnings->setBadge($member->member_id, "badge2");
                 echo("coucou2"); echo($count);
-
-
-
-
             }
-
-
-
-
-
+            if($countlog>0)
+            {
+                $this->Earnings->setBadge($member->member_id, "badge3");
+                echo("coucou3"); echo($countlog);
+            }
         }
-
-
-
 
     }
 
+   /*public function badges()
+    {
+        $this->loadModel("Earnings");
+
+       $badge = "badge1";
+       $classbadges_array = $this->Earnings->getClass($badge);
+
+       if ($this->request->is("post")) {
+           $member_id = $this->Auth->user('id');
+
+           if ($this->request->data('classbadges') == 0)
+               $badge = "badge1";
+
+           if ($this->request->data('classbadges') == 1)
+               $badge = "badge1";
+
+           if ($this->request->data('classbadges') == 2)
+               $badge = "badge3";
+
+           if ($this->request->data('classbadges') == 3)
+               $badge = "badge4";
+
+           if ($this->request->data('classbadges') == 4)
+               $badge = "badge5";
+
+           $classbadges_array = $this->Earnings->getClass($badge);
+           $this->set("classbadges_array", $classbadges_array);
+           $this->set("badge", $badge);
+       }
+       $this->set("classbadges_array", $classbadges_array);
+       $this->set("badge", $badge);
+    }*/
+
     public function newDevice($id_member, $id_device, $description)
     {
-
 
         $this->loadModel("Devices");
         $this->Devices->addDevice($id_member, $id_device, $description);
