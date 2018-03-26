@@ -46,21 +46,15 @@ class MainController extends AppController
 
         if ($this->request->is('post'))//si on a envoyé un formulaire
         {
-            if(isset($this->request->data['changepasswd']))
-            {
+            if (isset($this->request->data['changepasswd'])) {
                 $new_password = $this->request->data('password');
-                if($this->Members->changePassword($user_id, $new_password))
-                {
+                if ($this->Members->changePassword($user_id, $new_password)) {
                     $this->Flash->success(__('Password changed successfully !'));
                     return $this->redirect(['action' => 'moncompte']);
-                }
-                else
-                {
+                } else {
                     $this->Flash->error(__('Impossible to change the password !'));
                 }
-            }
-            else
-            {
+            } else {
                 $ext = strtolower(pathinfo($this->request->data['user_img']['name'], PATHINFO_EXTENSION));
                 if (!empty($this->request->data['user_img']['tmp_name']) && in_array($ext, array('jpg', 'jpeg', 'png', 'gif'))) {
                     $files = $dos->find($this->Auth->user("id") . '\.(?:jpg|jpeg|png|gif)$');
@@ -288,6 +282,8 @@ class MainController extends AppController
             $description = $this->request->data('description');
             $contest_id = $this->request->data('contest');
             $this->Workouts->addWorkouts($date, $end_date, $sport, $description, $lieu, $member_id, $contest_id);
+            $this->badges();
+
             $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 
 
@@ -332,59 +328,63 @@ class MainController extends AppController
         $this->redirect(['controller' => 'Main', 'action' => 'seances']);
     }
 
-    public function addEarning($workout_id, $log_id)
+    public function addEarning()
     {
-        $this->loadModel("Earnings");
-        $this->loadModel("Logs");
-        $this->loadModel("Workouts");
 
-        $new = $this->Earnings->newEntity();
 
-            $log_value = $this->request->data('log_value');
-
-           
-
-            $this->set("new", $new);
-
-        $this->redirect(['controller' => 'Main', 'action' => 'seances']);
     }
 
     public function badges()
     {
+
         $this->loadModel("Earnings");
         $this->loadModel("Logs");
         $this->loadModel("Workouts");
 
-        $badge_type = "1ère séance enregistrée";
-        $badges_array = $this->Earnings->getClass($badge_type);
 
-        if ($this->request->is("post")) {
-            $member_id = $this->Auth->user('id');
+        $count_list = [];
 
-            if ($this->request->data('badges') == 0)
-                $badge_type = "1ère séance enregistrée";
-
-            if ($this->request->data('badges') == 1)
-                $badge_type = "5ème séance enregistrée";
-
-            if ($this->request->data('badges') == 2)
-                $badge_type = "1er match enregistré";
-
-            if ($this->request->data('badges') == 3)
-                $badge_type = "Abdos en béton";
-
-            if ($this->request->data('badges') == 4)
-                $badge_type = "Marathonien";
+        $list_members = $this->Workouts->getMembers();
+        $this->set("members_array", $list_members);
 
 
-            $badges_array = $this->Earnings->getClass($badge_type);
-            $this->set("badges_array", $badges_array);
-            $this->set("badge_type", $badge_type);
+
+
+        foreach ($list_members as $member) {
+
+            $count = $this->Workouts->getNumberWorkouts($member->member_id);
+
+
+
+            if($count<5 && $count>0)
+            {
+
+                $this->Earnings->setBadge($member->member_id, "badge1");
+                echo("coucou1"); echo($count);
+
+
+            }
+            if($count>4)
+            {
+
+                $this->Earnings->setBadge($member->member_id, "badge2");
+                echo("coucou2"); echo($count);
+
+
+
+
+            }
+
+
+
+
+
         }
-        $this->set("badges_array", $badges_array);
-        $this->set("badge_type", $badge_type);
-    }
 
+
+
+
+    }
 
     public function newDevice($id_member, $id_device, $description)
     {
@@ -422,7 +422,7 @@ class MainController extends AppController
 
     }
 
-    public function AddLogVal($serial_device,$id_workout,$id_member,$log_type,$log_value)
+    public function AddLogVal($serial_device, $id_workout, $id_member, $log_type, $log_value)
     {
 
         $this->loadModel("Devices");
@@ -433,7 +433,7 @@ class MainController extends AppController
 
         if ($check == 1) {
 
-            $this->Logs->newlog($id_member,$log_type,$id_workout,$log_value,$serial_device);
+            $this->Logs->newlog($id_member, $log_type, $id_workout, $log_value, $serial_device);
 
             return $this->redirect(['controller' => 'Main', 'action' => 'seances']);
 

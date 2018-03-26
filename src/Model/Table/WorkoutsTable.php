@@ -84,5 +84,29 @@ class WorkoutsTable extends Table
 
     }
 
+    public function getMembers()
+    {
+        $all_members = $this
+            ->find()
+            ->select(['member_id'])
+            ->distinct(['member_id']);
+
+        return $all_members;
+
+    }
+
+    public function getNumberWorkouts($members_table)
+    {
+
+        $query = $this
+            ->find()
+            ->where(['member_id ='  => $members_table])->toArray();
+        $number = count($query);
+
+        return $number;
+
+    }
+
+
 
 }
