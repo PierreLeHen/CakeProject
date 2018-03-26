@@ -15,6 +15,7 @@ use Cake\Filesystem\File;
 
 class MainController extends AppController
 {
+
     public function initialize()
     {
         parent::initialize();
@@ -252,10 +253,12 @@ class MainController extends AppController
 
             if ($this->request->data('classement') == 5)
                 $log_type = "Rameur";
-
+        
+            $user_id = $this->Auth->user('id');
             $classement_array = $this->Logs->getClass($log_type);
             $this->set("classement_array", $classement_array);
             $this->set("log_type", $log_type);
+             $this->set("user_id", $user_idw);
         }
         $this->set("classement_array", $classement_array);
         $this->set("log_type", $log_type);
@@ -442,6 +445,26 @@ class MainController extends AppController
 
         }
 
+
+    }
+        public function contact()
+    {
+
+    }
+    public function mentions()
+    {
+
+    }
+    public function equipe()
+    {
+
+    }
+    public function faq()
+    {
+
+    }
+     public function git()
+    {
 
     }
 

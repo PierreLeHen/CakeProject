@@ -1,5 +1,8 @@
 <?= $this->element('devices');?>
+<section id="bloco" class="col-md-8 col-lg-6 col-sm-10 col-xs-10  " >
+<body class="mycustomContainer">
 <h1>Objets connectés</h1>
+       <figure id="ligne"></figure>
 <div>
     <h2>Objets autorisés</h2>
     <table>
@@ -40,5 +43,7 @@
         ?>
     </table>
 </div>
+</body>
+</section>
 
 

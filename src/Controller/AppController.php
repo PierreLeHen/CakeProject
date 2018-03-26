@@ -20,7 +20,7 @@ use Cake\Event\Event;
 /**
  * Application Controller
  *
- * Add your application-wide methods in the class below, your controllers
+ *  Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
  * @link https://book.cakephp.org/3.0/en/controllers.html#the-app-controller
@@ -28,6 +28,7 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
+//public $helpers = array('Html','Javascript','GoogleMapV3');
  /**
      * Initialization hook method.
      *
@@ -75,7 +76,7 @@ class AppController extends Controller
 
  public function beforeFilter(Event $event)
  {
-  $this->Auth->allow(['register','inscriptions','classement','mdpoublie']); ///Indique quelles pages sont accesibles par tout le monde 
+  $this->Auth->allow(['register','inscriptions','classement','mdpoublie','contact','equipe','faq','home','mentions','git']); ///Indique quelles pages sont accesibles par tout le monde 
  }
 
  /**
@@ -95,4 +96,5 @@ class AppController extends Controller
    $this->set('_serialize', true);
   }
  }
+ 
 }

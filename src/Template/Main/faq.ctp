@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
+<?= $this->element('home');?>
+
     <body>
+     
+
         <h1>FAQ</h1>
+        <figure class="ligne"></figure>
         <p>Cette page sert à répondre à vos questions les plus communes concernant l'utilisation du site.</p>
         <ul>
             <li>Comment je fais pour réserver une séance ?<br>Il suffit de cliquer sur l'onglet "séance" et d'en créer une.</li>
