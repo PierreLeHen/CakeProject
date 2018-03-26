@@ -42,6 +42,8 @@ class MembersTable extends Table
         ));
         return $rules;
     }
+    
+    
     public function validationDefault(Validator $validator)
     {
         $validator->add('password', 'length', ['rule' => ['lengthBetween', 6, 10,]]);
@@ -82,6 +84,16 @@ class MembersTable extends Table
 
         $member->password=$new_password;
         return $this->save($member);
+    }
+       public function getadressfromid($member_id)
+    {
+  $mail = $this
+            ->find()
+            ->select(['email'])
+            ->order(array("date" => "DESC"))
+            ->where(['member_id =' => $id]);
+
+        return $mail;
     }
 
 }

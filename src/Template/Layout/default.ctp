@@ -36,6 +36,8 @@ $cakeDescription = 'CAP SPORTS';
         <?= $this->Html->css('bootstrap.min.css');?>
         <?= $this->Html->script('jquery.min.js');?>
         <?=  $this->Html->script('bootstrap.min.js');?>
+        
+
 
         <!-- Basic css et utils Cake-->
         <?= $this->Html->css('base.css') ?>
@@ -48,16 +50,20 @@ $cakeDescription = 'CAP SPORTS';
     <body>
         </nav>
     <?= $this->Flash->render() ?>
+     <div class="background_header">
+        <p>Démogé - Juin de Faucal - Le Hen - Marchand, Options (B) E et F-</p><p class="text-align-r"> <a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p></p>
+         </div>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
     <footer>
-        <p><?=$this->html->link("Contact",["controller" => "pages","action" => "contact"])?>
-            <?=$this->html->link("Equipe",["controller" => "pages","action" => "equipe"])?>
-            <?=$this->html->link("Faq",["controller" => "pages","action" => "faq"])?>
-            <?=$this->html->link("Mentions légales",["controller" => "pages","action" => "mentions"])?>
+        <p><?=$this->html->link("Contact",["controller" => "Main","action" => "contact"])?>
+            <?=$this->html->link("Equipe",["controller" => "Main","action" => "equipe"])?>
+            <?=$this->html->link("Faq",["controller" => "Main","action" => "faq"])?>
+            <?=$this->html->link("Mentions légales",["controller" => "Main","action" => "mentions"])?>
+            <?=$this->html->link("GIT",["controller" => "Main","action" => "git"])?>
         </p>
-        <p><span class="frame">Démogé - Juin de Faucal - Lehen - Marchand, options B et G -</span> <a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p>
+       
     </footer>
     </body>
 </html>

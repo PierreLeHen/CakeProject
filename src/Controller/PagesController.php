@@ -67,20 +67,5 @@ class PagesController extends AppController
         }
     }
 
-    public function contact()
-    {
 
-    }
-    public function mentions()
-    {
-
-    }
-    public function equipe()
-    {
-
-    }
-    public function faq()
-    {
-
-    }
 }

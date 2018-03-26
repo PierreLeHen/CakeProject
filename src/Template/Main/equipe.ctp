@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
+<?= $this->element('home');?>
     <body>
         <h1>L'équipe</h1>
+          <figure class="ligne"></figure>
         <p>Notre équipe est composée de 4 étudiants en école d'ingénieurs tous dans la majeure OCRES (Objets Connectés, Réseaux Et Services).</p>
         <p>Le but de ce projet web est de réaliser un site web de gestion d'activité sportive, l'objectif étant de rendre le sport plus attractif en nous mettant en relation avec nos amis à travers une interface simple et esthétique.</p>
         <p>Ainsi, nous avons au sein de l'équipe : </p>

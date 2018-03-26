@@ -1,5 +1,48 @@
 /*__________________________________________________________________________________________________________________*/
 /*Feuille de style utilisée de facon récurrente pour toutes les pages*/
+@font-face {
+    font-family:"Futura PT";
+    src: url("font/Futura Md BT Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family:"Proxima Nova";
+    src: url("font/proximanova-regular-webfont.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family:"Proxima Nova";
+    src: url("font/proximanova-bold-webfont.ttf");
+    font-weight: 700;
+}
+h1{
+	font-family: "Futura PT";
+		font-weight: 700;
+		font-size: 35pt;
+		text-transform: uppercase;
+		color:#000;
+}
+.background_header p {color: aliceblue!important; }
+h2{
+    margin-top: 25px!important;
+    font-size: 16pt !important;
+    font-family: "Futura"!important;
+            font-weight: 700 !important;
+                    text-transform: uppercase;
+
+}
+th, td {
+    border-bottom: 1px solid #ddd !important ;
+    font-family:"Proxima Nova" !important;
+     font-size:16px !important;
+         padding: 10px 0px !important;
+
+}
+th{
+    padding: 10px 0px !important;
+    color:  #8c8c60 !important;
+}
 
 button{
  padding: 7px!important;
@@ -18,6 +61,20 @@ button:hover
   color: #FFF!important;
 }
 
+#bloco
+{
+	/*c'est le gros bloc qui contient tout le classement, celui au dessus du background */
+	float: none;
+	padding:4%;
+	margin-bottom:30px!importants;
+	width: 100%;
+	background-color: white;
+	opacity: 1;
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.17); 
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.17);
+}
+
+
 #ligne_login
 /*c'est la ligne sous le classement*/
 {
@@ -29,22 +86,57 @@ button:hover
         padding: 0px!important;
 
 }
-
-footer{   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   text-align: center;}
-
-footer a
+.mycustomContainer{
+	background-color: #efefef;
+	background-image:url("../img/bg2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#ligne
+/*c'est la ligne sous le classement*/
 {
-    display: inline-block;
-    width: 24%;
-    text-align: center;
-    margin: 0px!important;
-      color: #8c8c60!important;
+	height: 8px;
+	width: 60px;
+	background-color: #8c8c60;
+	margin-bottom: 45px;
+}
+.ligne
+/*c'est la ligne sous le classement*/
+{
+    height: 8px;
+    width: 60px;
+    background-color: #000000;
+        margin-bottom: 45px;
+        margin-left: 0px;
+        padding: 0px!important;
 
 }
+.background_header {background-color:#282828;
+ }
+footer{  
+
+position:fixed;
+
+bottom:0;
+
+width:100%;
+
+text-align: center;
+height:100px ;
+}
+
+footer a 
+{
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+    margin: 0px!important;
+    font-family: "system-ui";
+   font-size: 25px;
+
+}
+.colorBlack{color: black!important!important;}
+.colorWhite a {color: #fff!important!important!important;}
 footer p
 {
     font-size: 20px!important;
@@ -52,13 +144,16 @@ footer p
     margin-top: 20px;
     color: #BBB!important
 }
-span.frame {
-    border: 2px solid #fff;
-     padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
+.text-align-r{
+float: right;
+display: inline-block;
+position: fixed;
+top: 0;
+right: 0;
 }
-
+.name{float: left;}
+/*FIN LOGIN PAGE*/
+/*__________________________________________________________________________________________________________________*/
+/*PAGE DE CLASSEMENT*/
 
 /*______________________

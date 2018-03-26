@@ -20,14 +20,8 @@ background-repeat:no-repeat;
 background-position:top center;
     background-size: cover;
     }
+.white{color: white}
 
-h1{
-	font-family: "Futura PT";
-		font-weight: 700;
-		font-size: 35pt;
-		text-transform: uppercase;
-		color:#FFF;
-}
 p{
 		font-family: "Proxima Nova";
 		    font-weight: 300;
