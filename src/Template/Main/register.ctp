@@ -19,10 +19,10 @@ echo $this->Html->css('login.css');?>
       <?= $this->Flash->render() ?>
       <div id="preform">
          <a id="gotoinscription"
-            <?php echo $this->Html->link("Vous n'êtes pas inscrits ? Inscrivez vous ! ",['controller' => 'Main', 'action'=> 'inscriptions']); ?>
+            <?php echo $this->Html->link("Vous n'êtes pas inscrit ? Inscrivez-vous ! ",['controller' => 'Main', 'action'=> 'inscriptions']); ?>
             </a>
          <a id="gotoinscription"
-            <?php echo $this->Html->link("Mot de Passe oublié ?",['controller' => 'Main', 'action'=> 'inscriptions']); ?>
+            <?php echo $this->Html->link("Mot de passe oublié ?",['controller' => 'Main', 'action'=> 'inscriptions']); ?>
             </a>
       </div>
    </article>	

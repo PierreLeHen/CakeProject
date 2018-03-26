@@ -44,22 +44,28 @@ class EarningsTable extends Table
 
             $new->sticker_id = 5;
         }
-
-
         $this->save($new);
+    }
 
+    public function getAllBadges()
+    {
 
+        $all_badges = $this
+            ->find()
+            ->select(['id_member']);
+
+        return $all_badges;
     }
 
     public function getClass($badge)
     {
 
-        $classbadges = $this->find();
-        $classbadges->select(['member_id','badge'])
+        $badges = $this->find();
+        $badges->select(['member_id','badge'])
             ->group('member_id')
             ->where(['badge =' => $badge]);
 
-        return $classbadges;
+        return $badges;
 
     }
 
