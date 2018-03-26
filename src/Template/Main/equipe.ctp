@@ -1,4 +1,11 @@
-<?= $this->element('home');?>
+
+<?php echo $this->Html->css('home.css');
+if ($this->Session->read('Auth.User')) {
+    echo $this->element('home');
+} else {
+    echo $this->element('footer_out');
+}
+?>  
     <body>
         <h1>L'équipe</h1>
           <figure class="ligne"></figure>
@@ -15,5 +22,6 @@
             <tr><td>Adrien Marchand, "le mec sympa qui rédige cette page"</td>
                 <td><?php  echo $this->Html->image('jb2.jpg', array('width'=>'200px'))?></td></tr>
         </table>
+        <div class="row"></div>
     </body>
 </html>

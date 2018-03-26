@@ -8,7 +8,7 @@ echo $this->Html->css('menu');?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'devices'), ['class'=>'current','id'=>'current_iot','data-toggle'=>'tooltip','title'=>'Mes Objets Connectés']); ?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'seances'), ['class'=>'icone','id'=>'seance','data-toggle'=>'tooltip','title'=>'Mes Seances']); ?>
  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classement'), ['class'=>'icone','id'=>'classement','data-toggle'=>'tooltip','title'=>'Classements']); ?>
-  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'classement'), ['class'=>'icone','id'=>'badge','data-toggle'=>'tooltip','title'=>'Badges']); ?>
+  <?php echo $this->Html->link("", array('controller' => 'Main', 'action'=> 'badges'), ['class'=>'icone','id'=>'badge','data-toggle'=>'tooltip','title'=>'Badges']); ?>
 </nav>
 
 

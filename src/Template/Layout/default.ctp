@@ -50,7 +50,7 @@ $cakeDescription = 'CAP SPORTS';
 </nav>
 <?= $this->Flash->render() ?>
 <div class="background_header">
-    <p>Démogé - Juin de Faucal - Le Hen - Marchand, Options (B) E et F-</p>
+    <p>Démogé - Juin de Faucal - Le Hen - Marchand, Options B, E et F-</p>
     <p class="text-align-r"><a href="http://projetweb.capcoursier.fr/">http://projetweb.capcoursier.fr/</a></p></p>
 </div>
 <div class="container clearfix">

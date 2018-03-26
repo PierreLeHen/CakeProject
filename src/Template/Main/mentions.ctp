@@ -1,4 +1,11 @@
-<?= $this->element('home');?>
+
+<?php echo $this->Html->css('home.css');
+if ($this->Session->read('Auth.User')) {
+    echo $this->element('home');
+} else {
+    echo $this->element('footer_out');
+}
+?>
     <body>
            
 

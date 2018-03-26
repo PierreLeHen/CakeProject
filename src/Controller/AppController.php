@@ -76,7 +76,7 @@ class AppController extends Controller
 
  public function beforeFilter(Event $event)
  {
-  $this->Auth->allow(['register','inscriptions','classement','mdpoublie','contact','equipe','faq','home','mentions','git']); ///Indique quelles pages sont accesibles par tout le monde 
+  $this->Auth->allow(['register','inscriptions','classement','mdpoublie','contact','equipe','faq','home','mentions','git','badges']); ///Indique quelles pages sont accesibles par tout le monde 
  }
 
  /**
