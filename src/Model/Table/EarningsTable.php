@@ -15,34 +15,53 @@ use Cake\I18n\Date;
 class EarningsTable extends Table
 {
 
- public function setBadge($memberID, $badge)
-{
-
-
-    $new = $this->newEntity();
-    $new->date = Time::now('Europe/Paris');
-    $new->member_id = $memberID;
-
-    if($badge == "badge1")
+    public function setBadge($memberID, $badge)
     {
 
-        $new->sticker_id = 1;
+
+        $new = $this->newEntity();
+        $new->date = Time::now('Europe/Paris');
+        $new->member_id = $memberID;
+
+        if ($badge == "badge1") {
+
+            $new->sticker_id = 1;
+        }
+
+        if ($badge == "badge2") {
+
+            $new->sticker_id = 2;
+        }
+        if ($badge == "badge3") {
+
+            $new->sticker_id = 3;
+        }
+        if ($badge == "badge4") {
+
+            $new->sticker_id = 4;
+        }
+        if ($badge == "badge5") {
+
+            $new->sticker_id = 5;
+        }
+
+
+        $this->save($new);
+
+
     }
 
-    if($badge == "badge2")
+    public function getClass($badge)
     {
 
-        $new->sticker_id = 2;
+        $classbadges = $this->find();
+        $classbadges->select(['member_id','badge'])
+            ->group('member_id')
+            ->where(['badge =' => $badge]);
+
+        return $classbadges;
+
     }
-
-
-
-    $this->save($new);
-
-
-
-
-}
 
 
 }
