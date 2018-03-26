@@ -59,7 +59,7 @@ class LogsTable extends Table
     {
         $all_logs = $this
             ->find()
-            ->select(['id','log_type', 'log_value'])->where(['workout_id =' => $workoutid]);
+            ->select(['id', 'log_type', 'log_value'])->where(['workout_id =' => $workoutid]);
 
         return $all_logs;
     }
@@ -68,7 +68,7 @@ class LogsTable extends Table
     {
 
         $classement = $this->find();
-            $classement->select(['member_id','log_value' => $classement->func()->SUM('log_value')])
+        $classement->select(['member_id', 'log_value' => $classement->func()->SUM('log_value')])
             ->group('member_id')
             ->where(['log_type =' => $log_type])
             ->order(['log_value' => 'DESC']);
@@ -77,7 +77,7 @@ class LogsTable extends Table
 
     }
 
-    public function newlog($id_member,$log_type,$id_workout,$log_value,$serial_device)
+    public function newlog($id_member, $log_type, $id_workout, $log_value, $serial_device)
     {
 
         $new = $this->newEntity();
@@ -91,12 +91,13 @@ class LogsTable extends Table
         $new->member_id = $id_member;
         $this->save($new);
     }
+
     public function getNumberLogs($members_table)
     {
 
         $query = $this
             ->find()
-            ->where(['member_id ='  => $members_table])->toArray();
+            ->where(['member_id =' => $members_table])->toArray();
         $number = count($query);
 
         return $number;
@@ -108,14 +109,12 @@ class LogsTable extends Table
 
         $query = $this
             ->find()
-            ->where(['member_id ='  => $members_table])->toArray();
+            ->where(['member_id =' => $members_table])->toArray();
         $number = count($query);
 
         return $number;
 
     }
-
-
 
 
 }

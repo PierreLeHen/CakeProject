@@ -258,7 +258,7 @@ class MainController extends AppController
             $classement_array = $this->Logs->getClass($log_type);
             $this->set("classement_array", $classement_array);
             $this->set("log_type", $log_type);
-             $this->set("user_id", $user_idw);
+             $this->set("user_id", $user_id);
         }
         $this->set("classement_array", $classement_array);
         $this->set("log_type", $log_type);
@@ -393,30 +393,28 @@ class MainController extends AppController
     {
         $this->loadModel("Earnings");
 
-       $badge = "badge1";
-       $badges_array = $this->Earnings->getClass($badge);
+       $badge = "1";
+       $badges_array = $this->Earnings->getClass($badge)->toArray();
 
        if ($this->request->is("post")) {
            $member_id = $this->Auth->user('id');
 
            if ($this->request->data('badges') == 0)
-               $badge = "badge1";
+               $badge = "1";
 
            if ($this->request->data('badges') == 1)
-               $badge = "badge1";
+               $badge = "2";
 
            if ($this->request->data('badges') == 2)
-               $badge = "badge3";
+               $badge = "3";
 
            if ($this->request->data('badges') == 3)
-               $badge = "badge4";
+               $badge = "4";
 
            if ($this->request->data('badges') == 4)
-               $badge = "badge5";
+               $badge = "5";
 
-           $badges_array = $this->Earnings->getClass($badge);
-           $this->set("badges_array", $badges_array);
-           $this->set("badge", $badge);
+           $badges_array = $this->Earnings->getClass($badge)->toArray();
        }
        $this->set("badges_array", $badges_array);
        $this->set("badge", $badge);

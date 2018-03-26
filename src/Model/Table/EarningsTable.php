@@ -61,9 +61,9 @@ class EarningsTable extends Table
     {
 
         $badges = $this->find();
-        $badges->select(['member_id','badge'])
+        $badges->select(['member_id','sticker_id'])
             ->group('member_id')
-            ->where(['badge =' => $badge]);
+            ->where(['sticker_id =' => $badge]);
 
         return $badges;
 
