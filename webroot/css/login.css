@@ -37,7 +37,7 @@ article{
 	margin-top: 10vh;}
 label {color: white;}
 
-#gotoinscription{
+.gotoinscription{
 	display: block;	
 	  text-decoration: underline;
 }

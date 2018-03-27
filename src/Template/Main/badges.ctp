@@ -8,18 +8,18 @@ if ($this->Session->read('Auth.User')) {
 ?>
 
 
-<body class="mycustomContainer">    
+<div class="mycustomContainer">    
     <section id="bloco" class="col-md-8 col-lg-6 col-sm-10 col-xs-10  ">
         <div><h1>Badges</h1>
             <figure id="ligne"></figure>
-            <h3>Trier par :
+            <h3>Trier par : </h3>
                 <?php
                 echo $this->Form->create(null);
                 echo $this->Form->select('badges', ["1ère séance enregistrée", "5ème séance enregistrée", "1er match enregistré", "Relevé en chef !", "Super Sportif !"], ['multiple' => false]);
                 echo $this->Form->submit("Actualiser", array("class" => "btn pagebtn float-right",'id'=>'submit'));
                 echo $this->Form->end();
                 ?>
-            </h3>
+           
 
             <?php if($badge == 1)
 {
@@ -51,10 +51,10 @@ if ($this->Session->read('Auth.User')) {
     }
     echo '<article class="tuile">
 			<!-- IMAGE DE LA TUILE -->
-	' . $this->Html->image($tmp, array('width' => '200px', 'class' => 'imgtuile')) . '
+	' . $this->Html->image($tmp, array('width' => '200', 'class' => 'imgtuile')) . '
 			<div class="rect ">
 				<!-- NOM DU JOUEUR DE LA TUILE-->
-                <p class="joueur">ID : ' . $id . '</p>
+                <h2 class="joueur">ID : ' . $id . '</h2>
 
 				<!-- Classement-->
 				<p class="classement">' ?>  <?php if($badge == 1)
@@ -92,4 +92,4 @@ if ($this->Session->read('Auth.User')) {
 
         </div>
     </section>
-</body>
+</div>

@@ -1,6 +1,5 @@
 <?= $this->Html->css('login.css') ?>
 <?= $this->element('home');?>
-<body>
   <article class="col-md-7 col-lg-5 col-sm-10 col-xs-10 col-md-offset-2 col-lg-offset-1 col-xs-offset-1 col-sm-offset-1 " >
    <h1 class="white" >CAP - SPORT - INSCRIPTIONS</h1>
     <figure id="ligne_login"></figure>
@@ -19,5 +18,4 @@
     <?= $this->Flash->render() ?>
   </article>	
 
-</body>
 

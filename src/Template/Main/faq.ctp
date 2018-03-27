@@ -6,10 +6,6 @@ if ($this->Session->read('Auth.User')) {
     echo $this->element('footer_out');
 }
 ?>
-
-    <body>
-     
-
         <h1>FAQ</h1>
         <figure class="ligne"></figure>
         <p>Cette page sert à répondre à vos questions les plus communes concernant l'utilisation du site.</p>
@@ -19,5 +15,3 @@ if ($this->Session->read('Auth.User')) {
             <li>Pourquoi la vie ? <br> Parce que la vie c'est cool (comme dirait Waleed Mouhali !)</li>
             <li>Votre site internet est vraiment beau ! Comment en faire un aussi beau ? <br> Pour cela, il faut vous adresser à Grégoire Démogé !</li>
         </ul>
-    </body>
-</html>

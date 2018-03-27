@@ -11,14 +11,13 @@ if ($this->Session->read('Auth.User')) {
 
     <!-- figure c'est la ligne sous le classement -->
     <figure id="ligne"></figure>
-    <h3>Classer par :
+    <h3>Classer par : </h3>
         <?php
         echo $this->Form->create(null);
         echo $this->Form->select('classement', ["Pas couru", "Biceps", "Pompes", "Abdos", "Triceps", "Rameur"], ['multiple' => false]);
         echo $this->Form->submit("Actualiser", array("class" => "btn pagebtn float-right"));
         echo $this->Form->end();
         ?>
-    </h3>
     <?php $cnt = 1;
     foreach ($classement_array as $row) {
         $id = $row["member_id"];
@@ -28,10 +27,10 @@ if ($this->Session->read('Auth.User')) {
         }
         echo '<article class="tuile">
 			<!-- IMAGE DE LA TUILE -->
-	' . $this->Html->image($tmp, array('width' => '200px', 'class' => 'imgtuile')) . '
+	' . $this->Html->image($tmp, array('width' => '200', 'class' => 'imgtuile')) . '
 			<div class="rect ">
 				<!-- NOM DU JOUEUR DE LA TUILE-->
-                <p class="joueur">ID : ' . $id . '</p>
+                <h2 class="joueur">ID : ' . $id . '</h2>
 
 				<!-- Classement-->
 				<p class="classement">' . $cnt . '</p>

@@ -2,7 +2,6 @@
 <?= $this->element('home');?>
 <?php
 echo $this->Html->css('login.css');?>
-<body>
    <article class="col-md-7 col-lg-5 col-sm-10 col-xs-10 col-md-offset-2 col-lg-offset-1 col-xs-offset-1 col-sm-offset-1 " >
       <h1 class="white" >CAP - SPORT</h1>
           <figure id="ligne_login"></figure>
@@ -18,15 +17,14 @@ echo $this->Html->css('login.css');?>
       echo $this->Form->end();?>
       <?= $this->Flash->render() ?>
       <div id="preform">
-         <a id="gotoinscription"
+         <span class="gotoinscription">
             <?php echo $this->Html->link("Vous n'êtes pas inscrit ? Inscrivez-vous ! ",['controller' => 'Main', 'action'=> 'inscriptions']); ?>
-            </a>
-         <a id="gotoinscription"
+            </span>
+         <span class="gotoinscription">
             <?php echo $this->Html->link("Mot de passe oublié ?",['controller' => 'Main', 'action'=> 'inscriptions']); ?>
-            </a>
+            </span>
       </div>
    </article>	
-</body>
 
 
 

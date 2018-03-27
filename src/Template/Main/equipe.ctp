@@ -6,7 +6,6 @@ if ($this->Session->read('Auth.User')) {
     echo $this->element('footer_out');
 }
 ?>  
-    <body>
         <h1>L'équipe</h1>
           <figure class="ligne"></figure>
         <p>Notre équipe est composée de 4 étudiants en école d'ingénieurs tous dans la majeure OCRES (Objets Connectés, Réseaux Et Services).</p>
@@ -22,6 +21,4 @@ if ($this->Session->read('Auth.User')) {
             <tr><td>Adrien Marchand, "le mec sympa qui rédige cette page"</td>
                 <td><?php  echo $this->Html->image('jb2.jpg', array('width'=>'200px'))?></td></tr>
         </table>
-        <div class="row"></div>
-    </body>
-</html>
+    
