@@ -2,18 +2,18 @@
 /*Feuille de style utilisée de facon récurrente pour toutes les pages*/
 @font-face {
     font-family:"Futura PT";
-    src: url("font/Futura Md BT Bold.ttf");
+    src: url("../font/Futura Md BT Bold.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family:"Proxima Nova";
-    src: url("font/proximanova-regular-webfont.ttf");
+    src: url("../font/proximanova-regular-webfont.ttf");
     font-weight: 300;
 }
 @font-face {
     font-family:"Proxima Nova";
-    src: url("font/proximanova-bold-webfont.ttf");
+    src: url("../font/proximanova-bold-webfont.ttf");
     font-weight: 700;
 }
 h1{
@@ -66,7 +66,7 @@ button:hover
 	/*c'est le gros bloc qui contient tout le classement, celui au dessus du background */
 	float: none;
 	padding:4%;
-	margin-bottom:30px!importants;
+	margin-bottom:30px!important;
 	width: 100%;
 	background-color: white;
 	opacity: 1;
@@ -135,8 +135,8 @@ footer a
    font-size: 25px;
 
 }
-.colorBlack{color: black!important!important;}
-.colorWhite a {color: #fff!important!important!important;}
+.colorBlack{color: black!important;}
+.colorWhite a {color: #fff!important;}
 footer p
 {
     font-size: 20px!important;

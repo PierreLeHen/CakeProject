@@ -1,22 +1,22 @@
 @font-face {
     font-family:"Futura";
-    src: url("font/Futura Heavy BT.ttf");
+    src: url("../font/Futura Heavy BT.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family:"Proxima Nova";
-    src: url("font/proximanova-regular-webfont.ttf");
+    src: url("../font/proximanova-regular-webfont.ttf");
     font-weight: 300;
 }
 @font-face {
     font-family:"Proxima Nova";
-    src: url("font/proximanova-bold-webfont.ttf");
+    src: url("../font/proximanova-bold-webfont.ttf");
     font-weight: 700;
 }
 body{
 	background-color: #efefef;
-	background-image: url("images/bg2.jpg");
+	background-image: url("../img/bg2.jpg");
 	    background-repeat: no-repeat;
     background-size: cover;
 
@@ -78,7 +78,7 @@ box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.32);
     }
     #retour{
 /*icone retour*/
-    background-image: url("images/retour.png");
+    /*background-image: url("../img/retour.png");*/
 
 }
 .container
