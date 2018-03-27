@@ -2,18 +2,18 @@
 /*Feuille de style utilisée de facon récurrente pour toutes les pages*/
 @font-face {
     font-family:"Futura PT";
-    src: url("font/Futura Md BT Bold.ttf");
+    src: url("../font/Futura Md BT Bold.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family:"Proxima Nova";
-    src: url("font/proximanova-regular-webfont.ttf");
+    src: url("../font/proximanova-regular-webfont.ttf");
     font-weight: 300;
 }
 @font-face {
     font-family:"Proxima Nova";
-    src: url("font/proximanova-bold-webfont.ttf");
+    src: url("../font/proximanova-bold-webfont.ttf");
     font-weight: 700;
 }
 h1{
